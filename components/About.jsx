@@ -24,7 +24,7 @@ const About = () => {
           />
         </div>
         <div className="lg:w-1/2 lg:my-20">
-          <p className="py-2 px-4 rounded-2xl text-grey border-[1px] border-grey w-fit mb-10">
+          <p className="py-2 px-4 rounded-2xl text-lightgrey border-[1px] border-lightgrey w-fit mb-10">
             WHY CHOOSE US
           </p>
           <h2 className="text-5xl font-medium">

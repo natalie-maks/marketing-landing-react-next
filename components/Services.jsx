@@ -9,7 +9,7 @@ const Services = () => {
   return (
     <section className="flex flex-col xl:flex-row items-center gap-12 my-20">
       <div className="xl:w-1/2">
-        <p className="py-2 px-4 rounded-2xl text-grey border-[1px] border-grey w-fit mb-10">
+        <p className="py-2 px-4 rounded-2xl text-lightgrey border-[1px] border-lightgrey w-fit mb-10">
           SERVICES
         </p>
         <h2 className="text-5xl font-medium">Services we offer</h2>
