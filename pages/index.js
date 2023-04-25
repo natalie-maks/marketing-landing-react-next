@@ -14,7 +14,6 @@ export default function Home() {
       <Testimonials />
       <Blog />
       <CallToAction />
-      <div className="h-96"></div>
     </main>
   );
 }

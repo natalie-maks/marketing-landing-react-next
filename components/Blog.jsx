@@ -1,9 +1,53 @@
-import Link from "next/link";
-import Image from "next/image";
-import React from "react";
-import post1 from "@/assets/post1.jpg";
+import React, { useState, useEffect } from "react";
+import BlogArticle from "./BlogArticle";
+
+const blogArticles = [
+  {
+    title: "How to use social proof in marketing",
+    slug: "how-to-use",
+    excerpt:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
+    createdAt: "August 28, 2022",
+    img: "/post1.jpg",
+  },
+  {
+    title: "Make a great first impression with this titles",
+    slug: "make-a-great",
+    excerpt:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
+    createdAt: "August 26, 2022",
+    img: "/post2.jpg",
+  },
+  {
+    title: "How to grab your reader's attention",
+    slug: "how-to-grab",
+    excerpt:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
+    createdAt: "August 25, 2022",
+    img: "/post3.jpg",
+  },
+  {
+    title: "11 Useful Sites to Find a Hashtag For Social Media",
+    slug: "11-useful-sites",
+    excerpt:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
+    createdAt: "August 22, 2022",
+    img: "/post4.jpg",
+  },
+];
 
 const Blog = () => {
+  const [articles, setArticles] = useState(3);
+
+  const handleResize = () => {
+    if (window.innerWidth > 768) setArticles(4);
+    if (window.innerWidth > 1280) setArticles(3);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className="my-40">
       <div className="flex flex-col lg:flex-row">
@@ -26,62 +70,11 @@ const Blog = () => {
       </div>
 
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 mt-12">
-        <article className="rounded-3xl bg-darkgrey overflow-hidden">
-          <Image className="w-full h-52 object-cover" width="500" height="300" src={post1} />
-          <div className="p-8">
-            <time>August 28, 2022</time>
-            <h3 className="text-lg mt-4 mb-6">How to use social proof in marketing</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-              nihil odio perspiciatis nisi veritatis eius consequuntur
-            </p>
-            <Link className="text-linkblue mt-4 font-medium block" href="/">
-              Read now
-            </Link>
-          </div>
-        </article>
-        <article className="rounded-3xl bg-darkgrey overflow-hidden">
-          <Image className="w-full h-52 object-cover" width="500" height="300" src={post1} />
-          <div className="p-8">
-            <time>August 28, 2022</time>
-            <h3 className="text-lg mt-4 mb-6">How to use social proof in marketing</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-              nihil odio perspiciatis nisi veritatis eius consequuntur
-            </p>
-            <Link className="text-linkblue mt-4 font-medium block" href="/">
-              Read now
-            </Link>
-          </div>
-        </article>
-        <article className="rounded-3xl bg-darkgrey overflow-hidden">
-          <Image className="w-full h-52 object-cover" width="500" height="300" src={post1} />
-          <div className="p-8">
-            <time>August 28, 2022</time>
-            <h3 className="text-lg mt-4 mb-6">How to use social proof in marketing</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-              nihil odio perspiciatis nisi veritatis eius consequuntur
-            </p>
-            <Link className="text-linkblue mt-4 font-medium block" href="/">
-              Read now
-            </Link>
-          </div>
-        </article>
-        <article className="rounded-3xl bg-darkgrey overflow-hidden">
-          <Image className="w-full h-52 object-cover" width="500" height="300" src={post1} />
-          <div className="p-8">
-            <time>August 28, 2022</time>
-            <h3 className="text-lg mt-4 mb-6">How to use social proof in marketing</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-              nihil odio perspiciatis nisi veritatis eius consequuntur
-            </p>
-            <Link className="text-linkblue mt-4 font-medium block" href="/">
-              Read now
-            </Link>
-          </div>
-        </article>
+        {blogArticles.map((article, index) => {
+          for (let i = 0; index < articles; i++) {
+            return <BlogArticle key={article.slug} article={article} />;
+          }
+        })}
       </div>
     </section>
   );
