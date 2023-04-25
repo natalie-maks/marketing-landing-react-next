@@ -83,8 +83,8 @@ const About = () => {
         </div>
         <Image
           className="max-h-[520px] w-full  object-cover rounded-full rounded-tl-none"
-          width="100"
-          height="100"
+          width="500"
+          height="500"
           src={yellow2}
         />
       </div>
