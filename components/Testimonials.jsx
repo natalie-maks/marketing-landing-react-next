@@ -1,6 +1,32 @@
 import React from "react";
-import Image from "next/image";
-import star from "@/assets/star.svg";
+import TestimonialCard from "./TestimonialCard";
+
+const testimonials = [
+  {
+    id: 1234,
+    name: "Sophia Miller",
+    company: "Company Name",
+    img: "/review1.jpg",
+    title: "I recommend this agency",
+    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum",
+  },
+  {
+    id: 2345,
+    name: "Alice Smith",
+    company: "Company Name",
+    img: "/review2.jpg",
+    title: "The support is awesome",
+    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum",
+  },
+  {
+    id: 3456,
+    name: "James Brown",
+    company: "Company Name",
+    img: "/review3.jpg",
+    title: "A game changer for us",
+    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum",
+  },
+];
 
 const Testimonials = () => {
   return (
@@ -25,84 +51,9 @@ const Testimonials = () => {
       </div>
 
       <div className="flex space-x-8 overflow-x-auto  mt-12">
-        <article className="min-w-[288px] grow px-8 py-12 rounded-3xl bg-darkgrey overflow-hidden">
-          <header className="flex space-x-4 items-center">
-            <img
-              className="w-16 h-16 object-cover rounded-full"
-              width="100"
-              height="100"
-              src="/post1.jpg"
-            />
-            <div>
-              <p className="text-xl mb-1 text-white">John Doe</p>
-              <p>Company Name</p>
-            </div>
-          </header>
-
-          <h3 className="text-3xl mt-4 mb-6">"I recommend this agency"</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-            nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum
-          </p>
-          <Image
-            className="h-6 mt-6 w-auto object-cover rounded-full"
-            width="500"
-            height="100"
-            src={star}
-          />
-        </article>
-        <article className="min-w-[288px] grow px-8 py-12 rounded-3xl bg-darkgrey overflow-hidden">
-          <header className="flex space-x-4 items-center">
-            <img
-              className="w-16 h-16 object-cover rounded-full"
-              width="100"
-              height="100"
-              src="/post1.jpg"
-            />
-            <div>
-              <p className="text-xl mb-1 text-white">John Doe</p>
-              <p>Company Name</p>
-            </div>
-          </header>
-
-          <h3 className="text-3xl mt-4 mb-6">"I recommend this agency"</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-            nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum
-          </p>
-          <Image
-            className="h-6 mt-6 w-auto object-cover rounded-full"
-            width="500"
-            height="100"
-            src={star}
-          />
-        </article>
-        <article className="min-w-[288px] grow px-8 py-12 rounded-3xl bg-darkgrey overflow-hidden">
-          <header className="flex space-x-4 items-center">
-            <img
-              className="w-16 h-16 object-cover rounded-full"
-              width="100"
-              height="100"
-              src="/post1.jpg"
-            />
-            <div>
-              <p className="text-xl mb-1 text-white">John Doe</p>
-              <p>Company Name</p>
-            </div>
-          </header>
-
-          <h3 className="text-3xl mt-4 mb-6">"I recommend this agency"</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-            nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum
-          </p>
-          <Image
-            className="h-6 mt-6 w-auto object-cover rounded-full"
-            width="500"
-            height="100"
-            src={star}
-          />
-        </article>
+        {testimonials.map((testimonial, index) => (
+          <TestimonialCard key={testimonial.id} testimonial={testimonial} index={index} />
+        ))}
       </div>
     </section>
   );
