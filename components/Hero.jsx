@@ -7,7 +7,7 @@ import blue from "@/assets/blue.png";
 
 const Hero = () => {
   return (
-    <section className="md:h-screen lg:h-screen flex  items-center flex-col lg:flex-row gap-20 lg:gap-32 py-12">
+    <section className="md:h-screen lg:h-screen flex items-center flex-col lg:flex-row gap-20 lg:gap-32 pt-28 pb-12">
       <div className="lg:w-3/5 flex flex-col justify-center">
         <h1 className="text-5xl font-medium">Marketing solutions that grow your business.</h1>
         <p className="mt-10 mb-8">
