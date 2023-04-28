@@ -12,14 +12,16 @@ const About = () => {
         <div className="w-full md:h-[400px] lg:h-auto lg:w-1/2 lg:self-stretch flex space-x-4 lg:space-x-8">
           <Image
             className="w-3/5 h-auto object-cover rounded-full rounded-tr-none"
-            width="100"
-            height="100"
+            width="612"
+            height="853"
+            alt="smiling woman"
             src={green2}
           />
           <Image
             className="w-2/5 h-auto lg:h-2/5 lg:self-end object-cover rounded-full rounded-bl-none"
-            width="100"
-            height="100"
+            width="640"
+            height="960"
+            alt="smiling man"
             src={orange2}
           />
         </div>
@@ -36,19 +38,19 @@ const About = () => {
           </p>
           <ul className="flex flex-col space-y-3">
             <li className="flex items-center">
-              <Image className="w-10 h-10 bg-grey rounded-full p-1 block mr-4" src={check} />
+              <Image className="w-10 h-10 bg-grey rounded-full p-1 block mr-4" alt="" src={check} />
               <span>Some text in here</span>
             </li>
             <li className="flex items-center">
-              <Image className="w-10 h-10 bg-grey rounded-full p-1 block mr-4" src={check} />
+              <Image className="w-10 h-10 bg-grey rounded-full p-1 block mr-4" alt="" src={check} />
               <span>Some text in here</span>
             </li>
             <li className="flex items-center">
-              <Image className="w-10 h-10 bg-grey rounded-full p-1 block mr-4" src={check} />
+              <Image className="w-10 h-10 bg-grey rounded-full p-1 block mr-4" alt="" src={check} />
               <span>Some text in here</span>
             </li>
             <li className="flex items-center">
-              <Image className="w-10 h-10 bg-grey rounded-full p-1 block mr-4" src={check} />
+              <Image className="w-10 h-10 bg-grey rounded-full p-1 block mr-4" alt="" src={check} />
               <span>Some text in here</span>
             </li>
           </ul>
@@ -83,8 +85,9 @@ const About = () => {
         </div>
         <Image
           className="max-h-[520px] w-full  object-cover rounded-full rounded-tl-none"
-          width="500"
-          height="500"
+          width="640"
+          height="960"
+          alt="smiling man"
           src={yellow2}
         />
       </div>

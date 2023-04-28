@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply text-lightgrey font-sans;
-  background-color: #0e0d12;
+  @apply text-lightgrey font-sans bg-bggrey;
 }
 
 h1,

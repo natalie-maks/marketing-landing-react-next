@@ -11,8 +11,9 @@ const TestimonialCard = ({ testimonial, index }) => {
       <header className="flex space-x-4 items-center">
         <img
           className={`${corner} w-16 h-16 object-cover rounded-full `}
-          width="100"
-          height="100"
+          width="640"
+          height="640"
+          alt={testimonial.name}
           src={testimonial.img}
         />
         <div>
@@ -26,6 +27,7 @@ const TestimonialCard = ({ testimonial, index }) => {
         className="h-6 mt-6 w-auto object-cover rounded-full"
         width="500"
         height="100"
+        alt=""
         src={star}
       />
     </article>

@@ -7,7 +7,7 @@ const Nav = () => {
   const [clicked, setClicked] = useState(false);
 
   return (
-    <nav className="fixed top-0 z-10 h-20 w-full bg-darkgrey">
+    <nav className="fixed top-0 z-10 h-20 w-full bg-darkgrey shadow-md shadow-bggrey">
       <div className="container flex items-center justify-between h-full px-4 mx-auto">
         <Link href="/" aria-label="Main page">
           <Image
