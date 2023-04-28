@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BlogArticle from "./BlogArticle";
+import Button from "./UI/Button";
 
 const blogArticles = [
   {
@@ -63,9 +64,7 @@ const Blog = () => {
           </p>
         </div>
         <div className="lg:w-1/3 lg:flex mt-8 items-end justify-end">
-          <button className="text-white block py-3 px-6 rounded-full bg-blue hover:translate-y-[-2px] shadow-md hover:shadow-darkblue">
-            All Posts
-          </button>
+          <Button label={"All posts"} />
         </div>
       </div>
 

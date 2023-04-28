@@ -1,5 +1,6 @@
 import React from "react";
 import TestimonialCard from "./TestimonialCard";
+import Button from "./UI/Button";
 
 const testimonials = [
   {
@@ -44,9 +45,7 @@ const Testimonials = () => {
           </p>
         </div>
         <div className="lg:w-1/3 lg:flex mt-8 items-end justify-end">
-          <button className="text-white block py-3 px-6 rounded-full bg-blue hover:translate-y-[-2px] shadow-md hover:shadow-darkblue">
-            Get in touch
-          </button>
+          <Button label={"Get in touch"} />
         </div>
       </div>
 

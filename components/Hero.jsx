@@ -1,10 +1,10 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import green from "../assets/green.png";
 import yellow from "@/assets/yellow.png";
 import orange from "@/assets/orange.png";
 import blue from "@/assets/blue.png";
+import Button from "./UI/Button";
 
 const Hero = () => {
   return (
@@ -16,19 +16,9 @@ const Hero = () => {
           odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum architecto asperiores
           totam fugiat quaerat explicabo rem magnam incidunt.
         </p>
-        <div>
-          <Link
-            href="/"
-            className="inline-block text-white py-3 px-6 rounded-full bg-blue mr-4 md:mr-8 hover:translate-y-[-2px] shadow-md hover:shadow-darkblue"
-          >
-            Our services
-          </Link>
-          <Link
-            href="/"
-            className="inline-block text-white py-3 px-6 rounded-full bg-grey hover:translate-y-[-2px] shadow-md hover:shadow-shadowgrey"
-          >
-            Contact us
-          </Link>
+        <div className="flex flex-wrap gap-6">
+          <Button label={"Our services"} />
+          <Button label={"Contact us"} grey={true} />
         </div>
       </div>
       <div className="lg:w-2/5 max-h-[460px] 2xl:max-h-[660px] grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 grid-rows-2 sm:grid-rows-none lg:grid-rows-3 lg:gap-x-12 gap-6">

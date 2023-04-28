@@ -4,6 +4,7 @@ import social from "../assets/social.svg";
 import ads from "@/assets/ads.svg";
 import email from "@/assets/email.svg";
 import seo from "@/assets/seo.svg";
+import Button from "./UI/Button";
 
 const Services = () => {
   return (
@@ -17,9 +18,7 @@ const Services = () => {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil
           odio perspiciatis nisi veritatis eius consequuntur!
         </p>
-        <button className="text-white py-3 px-6 rounded-full bg-blue mr-4 md:mr-8 hover:translate-y-[-2px] shadow-md hover:shadow-darkblue">
-          Contact us
-        </button>
+        <Button label={"Contact us"} />
       </div>
       <div className="xl:w-1/2 flex flex-col sm:flex-row gap-6">
         <div>

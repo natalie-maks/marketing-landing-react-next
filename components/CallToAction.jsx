@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./UI/Button";
 
 const CallToAction = () => {
   return (
@@ -12,12 +13,8 @@ const CallToAction = () => {
         </p>
       </div>
       <div className="lg:w-1/2 max-w-[440px] flex flex-wrap justify-center gap-6">
-        <button className="text-white py-3 px-6 rounded-full bg-blue hover:translate-y-[-2px] shadow-md hover:shadow-darkblue">
-          Our services
-        </button>
-        <button className="text-white py-3 px-6 rounded-full bg-grey hover:translate-y-[-2px] shadow-md hover:shadow-shadowgrey">
-          Contact us
-        </button>
+        <Button label={"Our services"} />
+        <Button label={"Contact us"} grey={true} />
       </div>
     </div>
   );

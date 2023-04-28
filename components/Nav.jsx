@@ -2,6 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
+import Button from "./UI/Button";
 
 const Nav = () => {
   const [clicked, setClicked] = useState(false);
@@ -47,12 +48,7 @@ const Nav = () => {
             <Link href="/">Blog</Link>
           </li>
           <li className="hidden lg:block pl-6">
-            <Link
-              href="/"
-              className="block text-white text-base py-3 px-6 rounded-full bg-blue hover:translate-y-[-2px] shadow-md hover:shadow-darkblue"
-            >
-              Get started
-            </Link>
+            <Button label={"Get started"} />
           </li>
         </ul>
         <button
