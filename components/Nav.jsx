@@ -24,25 +24,25 @@ const Nav = () => {
         >
           <li
             onClick={() => setClicked(false)}
-            className="hover:text-linkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
+            className="hover:text-darkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
           >
             <Link href="/">Home</Link>
           </li>
           <li
             onClick={() => setClicked(false)}
-            className="hover:text-linkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
+            className="hover:text-darkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
           >
             <Link href="/">About</Link>
           </li>
           <li
             onClick={() => setClicked(false)}
-            className="hover:text-linkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
+            className="hover:text-darkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
           >
             <Link href="/">Services</Link>
           </li>
           <li
             onClick={() => setClicked(false)}
-            className="hover:text-linkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
+            className="hover:text-darkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
           >
             <Link href="/">Blog</Link>
           </li>

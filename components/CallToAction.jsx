@@ -15,7 +15,7 @@ const CallToAction = () => {
         <button className="text-white py-3 px-6 rounded-full bg-blue hover:translate-y-[-2px] shadow-md hover:shadow-darkblue">
           Our services
         </button>
-        <button className="text-white py-3 px-6 rounded-full bg-grey hover:translate-y-[-2px] shadow-md hover:shadow-darkgrey">
+        <button className="text-white py-3 px-6 rounded-full bg-grey hover:translate-y-[-2px] shadow-md hover:shadow-shadowgrey">
           Contact us
         </button>
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import green from "../assets/green.png";
 import yellow from "@/assets/yellow.png";
@@ -16,12 +17,18 @@ const Hero = () => {
           totam fugiat quaerat explicabo rem magnam incidunt.
         </p>
         <div>
-          <button className="text-white py-3 px-6 rounded-full bg-blue mr-4 md:mr-8 hover:translate-y-[-2px] shadow-md hover:shadow-darkblue">
+          <Link
+            href="/"
+            className="text-white py-3 px-6 rounded-full bg-blue mr-4 md:mr-8 hover:translate-y-[-2px] shadow-md hover:shadow-darkblue"
+          >
             Our services
-          </button>
-          <button className="text-white py-3 px-6 rounded-full bg-grey hover:translate-y-[-2px] shadow-md hover:shadow-darkgrey">
+          </Link>
+          <Link
+            href="/"
+            className="text-white py-3 px-6 rounded-full bg-grey hover:translate-y-[-2px] shadow-md hover:shadow-shadowgrey"
+          >
             Contact us
-          </button>
+          </Link>
         </div>
       </div>
       <div className="lg:w-2/5 lg:h-full max-h-[660px] grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 grid-rows-2 sm:grid-rows-none lg:grid-rows-3 lg:gap-x-12 gap-6">

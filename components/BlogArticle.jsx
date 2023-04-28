@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 const BlogArticle = ({ article }) => {
   return (
@@ -10,7 +9,7 @@ const BlogArticle = ({ article }) => {
         <time>{article.createdAt}</time>
         <h3 className="text-lg mt-4 mb-6">{article.title}</h3>
         <p>{article.excerpt}</p>
-        <Link className="text-linkblue mt-4 font-medium block" href="/">
+        <Link className="text-linkblue hover:text-darkblue mt-4 font-medium block" href="/">
           Read now
         </Link>
       </div>
