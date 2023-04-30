@@ -8,7 +8,7 @@ import Button from "./UI/Button";
 
 const Services = () => {
   return (
-    <section className="flex flex-col xl:flex-row items-center gap-12 my-40">
+    <section id="services" className="flex flex-col xl:flex-row items-center gap-12 my-40">
       <div className="xl:w-1/2">
         <p className="py-2 px-4 rounded-2xl text-lightgrey border-[1px] border-lightgrey w-fit mb-10">
           SERVICES
@@ -18,7 +18,7 @@ const Services = () => {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil
           odio perspiciatis nisi veritatis eius consequuntur!
         </p>
-        <Button label={"Contact us"} />
+        <Button label={"Contact us"} link={"/contact"} />
       </div>
       <div className="xl:w-1/2 flex flex-col sm:flex-row gap-6">
         <div>

@@ -45,7 +45,7 @@ const Testimonials = () => {
           </p>
         </div>
         <div className="lg:w-1/3 lg:flex mt-8 items-end justify-end">
-          <Button label={"Get in touch"} />
+          <Button label={"Get in touch"} link={"/contact"} />
         </div>
       </div>
 

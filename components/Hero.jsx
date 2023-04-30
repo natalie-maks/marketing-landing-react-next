@@ -8,7 +8,10 @@ import Button from "./UI/Button";
 
 const Hero = () => {
   return (
-    <section className="flex items-center flex-col lg:flex-row gap-20 lg:gap-32 pt-32 mb-40">
+    <section
+      id="hero"
+      className="flex items-center flex-col lg:flex-row gap-20 lg:gap-32 pt-32 mb-40"
+    >
       <div className="lg:w-3/5 flex flex-col justify-center">
         <h1 className="text-5xl font-medium">Marketing solutions that grow your business.</h1>
         <p className="mt-10 mb-8">
@@ -17,8 +20,8 @@ const Hero = () => {
           totam fugiat quaerat explicabo rem magnam incidunt.
         </p>
         <div className="flex flex-wrap gap-6">
-          <Button label={"Our services"} />
-          <Button label={"Contact us"} grey={true} />
+          <Button label={"Our services"} link={"/#services"} scroll={true} />
+          <Button label={"Contact us"} grey={true} link={"/contact"} />
         </div>
       </div>
       <div className="lg:w-2/5 max-h-[460px] 2xl:max-h-[660px] grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 grid-rows-2 sm:grid-rows-none lg:grid-rows-3 lg:gap-x-12 gap-6">

@@ -7,7 +7,7 @@ import check from "@/assets/check.svg";
 
 const About = () => {
   return (
-    <section className="my-40">
+    <section id="about" className="my-40">
       <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
         <div className="w-full md:h-[400px] lg:h-auto lg:w-1/2 lg:self-stretch flex space-x-4 lg:space-x-8">
           <Image

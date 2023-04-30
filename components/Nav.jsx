@@ -10,7 +10,7 @@ const Nav = () => {
   return (
     <nav className="fixed top-0 z-10 h-20 w-full bg-darkgrey shadow-md shadow-bggrey">
       <div className="container flex items-center justify-between h-full px-4 mx-auto">
-        <Link href="/" aria-label="Main page">
+        <Link href="/#hero" scroll={false} aria-label="Main page">
           <Image
             src={logo}
             alt="logo"
@@ -27,28 +27,36 @@ const Nav = () => {
             onClick={() => setClicked(false)}
             className="hover:text-darkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
           >
-            <Link href="/">Home</Link>
+            <Link href="/#hero" scroll={false}>
+              Home
+            </Link>
           </li>
           <li
             onClick={() => setClicked(false)}
             className="hover:text-darkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
           >
-            <Link href="/">About</Link>
+            <Link href="/#about" scroll={false}>
+              About
+            </Link>
           </li>
           <li
             onClick={() => setClicked(false)}
             className="hover:text-darkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
           >
-            <Link href="/">Services</Link>
+            <Link href="/#services" scroll={false}>
+              Services
+            </Link>
           </li>
           <li
             onClick={() => setClicked(false)}
             className="hover:text-darkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
           >
-            <Link href="/">Blog</Link>
+            <Link href="/#blog" scroll={false}>
+              Blog
+            </Link>
           </li>
           <li className="hidden lg:block pl-6">
-            <Button label={"Get started"} />
+            <Button label={"Get started"} link={"/contact"} />
           </li>
         </ul>
         <button

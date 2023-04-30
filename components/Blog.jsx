@@ -50,7 +50,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <section className="my-40">
+    <section id="blog" className="my-40">
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-2/3">
           <p className="py-2 px-4 rounded-2xl text-lightgrey border-[1px] border-lightgrey w-fit mb-10">
@@ -64,7 +64,7 @@ const Blog = () => {
           </p>
         </div>
         <div className="lg:w-1/3 lg:flex mt-8 items-end justify-end">
-          <Button label={"All posts"} />
+          <Button label={"All posts"} link={"articles"} />
         </div>
       </div>
 

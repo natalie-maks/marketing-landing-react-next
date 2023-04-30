@@ -13,8 +13,8 @@ const CallToAction = () => {
         </p>
       </div>
       <div className="lg:w-1/2 max-w-[440px] flex flex-wrap justify-center gap-6">
-        <Button label={"Our services"} />
-        <Button label={"Contact us"} grey={true} />
+        <Button label={"Our services"} link={"/#services"} scroll={true} />
+        <Button label={"Contact us"} grey={true} link={"/contact"} />
       </div>
     </div>
   );
