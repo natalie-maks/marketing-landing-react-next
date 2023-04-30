@@ -1,9 +1,33 @@
 import React from "react";
+import AboutMetrics from "./AboutMetrics";
 import Image from "next/image";
 import green2 from "../assets/green-2.png";
 import yellow2 from "@/assets/yellow-2.png";
 import orange2 from "@/assets/orange-2.png";
 import check from "@/assets/check.svg";
+
+const metrics = [
+  {
+    title: "1.2M+",
+    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati",
+    id: "metric-1",
+  },
+  {
+    title: "3.4B",
+    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati",
+    id: "metric-2",
+  },
+  {
+    title: "98%",
+    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati",
+    id: "metric-3",
+  },
+  {
+    title: "10+",
+    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati",
+    id: "metric-4",
+  },
+];
 
 const About = () => {
   return (
@@ -58,30 +82,9 @@ const About = () => {
       </div>
       <div className="flex flex-col lg:flex-row w-full gap-16 mt-40">
         <div className="grid sm:grid-cols-2 gap-6">
-          <div className="bg-darkgrey rounded-3xl py-10 px-6">
-            <h3 className="mb-8 text-4xl font-medium">1.2M+</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-            </p>
-          </div>
-          <div className="bg-darkgrey rounded-3xl py-10 px-6">
-            <h3 className="mb-8 text-4xl font-medium">3.4B</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-            </p>
-          </div>
-          <div className="bg-darkgrey rounded-3xl py-10 px-6">
-            <h3 className="mb-8 text-4xl font-medium">98%</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-            </p>
-          </div>
-          <div className="bg-darkgrey rounded-3xl py-10 px-6">
-            <h3 className="mb-8 text-4xl font-medium">10+</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-            </p>
-          </div>
+          {metrics.map((metric) => (
+            <AboutMetrics key={metric.id} metric={metric} />
+          ))}
         </div>
         <Image
           className="max-h-[520px] w-full  object-cover rounded-full rounded-tl-none"

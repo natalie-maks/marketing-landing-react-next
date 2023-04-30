@@ -1,10 +1,45 @@
 import React from "react";
-import Image from "next/image";
 import social from "../assets/social.svg";
 import ads from "@/assets/ads.svg";
 import email from "@/assets/email.svg";
 import seo from "@/assets/seo.svg";
 import Button from "./UI/Button";
+import ServiceCard from "./ServiceCard";
+
+const services = [
+  {
+    title: "Social Media Marketing",
+    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis",
+    id: "service-1",
+    img: social,
+    color: "blue",
+    styles: "sm:row-start-2	sm:row-end-7",
+  },
+  {
+    title: "Email Marketing",
+    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis",
+    id: "service-2",
+    img: email,
+    color: "orange",
+    styles: "sm:row-start-7 sm:row-end-[12]",
+  },
+  {
+    title: "Paid Advertising",
+    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis",
+    id: "service-3",
+    img: ads,
+    color: "yellow",
+    styles: "sm:row-start-1	sm:row-end-6",
+  },
+  {
+    title: "SEO Optimization",
+    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis",
+    id: "service-4",
+    img: seo,
+    color: "green",
+    styles: "sm:row-start-6	sm:row-end-[11]",
+  },
+];
 
 const Services = () => {
   return (
@@ -20,75 +55,10 @@ const Services = () => {
         </p>
         <Button label={"Contact us"} link={"/contact"} />
       </div>
-      <div className="xl:w-1/2 flex flex-col sm:flex-row gap-6">
-        <div>
-          <div className="bg-darkgrey rounded-3xl py-8 px-6 my-6">
-            <div className=" p-3 w-fit rounded-3xl bg-blue/5 shadow-md shadow-black/20">
-              <Image
-                width="48"
-                height="48"
-                alt=""
-                className="w-12 h-12 bg-blue rounded-full p-2"
-                src={social}
-              />
-            </div>
-            <h3 className="my-3 font-medium">Social Media Marketing</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-              nihil odio perspiciatis
-            </p>
-          </div>
-          <div className="bg-darkgrey rounded-3xl py-8 px-6">
-            <div className=" p-3 w-fit rounded-3xl bg-orange/5 shadow-md shadow-black/20">
-              <Image
-                width="48"
-                height="48"
-                alt=""
-                className="w-12 h-12 bg-orange rounded-full p-2"
-                src={email}
-              />
-            </div>
-            <h3 className="my-3 font-medium">Email Marketing</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-              nihil odio perspiciatis
-            </p>
-          </div>
-        </div>
-        <div>
-          <div className="bg-darkgrey rounded-3xl py-8 px-6 mb-6">
-            <div className=" p-3 w-fit rounded-3xl bg-yellow/5 shadow-md shadow-black/20">
-              <Image
-                width="48"
-                height="48"
-                alt=""
-                className="w-12 h-12 bg-yellow rounded-full p-2"
-                src={ads}
-              />
-            </div>
-            <h3 className="my-3 font-medium">Paid Advertising</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-              nihil odio perspiciatis
-            </p>
-          </div>
-          <div className="bg-darkgrey rounded-3xl py-8 px-6">
-            <div className=" p-3 w-fit rounded-3xl bg-green/5 shadow-md shadow-black/20">
-              <Image
-                width="48"
-                height="48"
-                alt=""
-                className="w-12 h-12 bg-green rounded-full p-2"
-                src={seo}
-              />
-            </div>
-            <h3 className="my-3 font-medium">SEO Optimization</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-              nihil odio perspiciatis
-            </p>
-          </div>
-        </div>
+      <div className="xl:w-1/2 grid sm:grid-rows-11 gap-6">
+        {services.map((service) => (
+          <ServiceCard key={service.id} service={service} />
+        ))}
       </div>
     </section>
   );
