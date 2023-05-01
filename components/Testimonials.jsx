@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import TestimonialCard from "./TestimonialCard";
 import Button from "./UI/Button";
 
@@ -29,31 +31,76 @@ const testimonials = [
   },
 ];
 
+const MotionTestimonialCard = motion(TestimonialCard);
+const MotionButton = motion(Button);
+
 const Testimonials = () => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: -30 },
+    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
+  };
+
+  const label = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { ease: "easeInOut", duration: 0.7 } },
+  };
+
   return (
     <section className="my-40">
-      <div className="flex flex-col lg:flex-row">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-30%" }}
+        className="flex flex-col lg:flex-row"
+      >
         <div className="lg:w-2/3">
-          <p className="py-2 px-4 rounded-2xl text-lightgrey border-[1px] border-lightgrey w-fit mb-10">
+          <motion.p
+            variants={label}
+            className="py-2 px-4 rounded-2xl text-lightgrey border-[1px] border-lightgrey w-fit mb-10"
+          >
             TESTIMONIALS
-          </p>
-          <h2 className="text-5xl font-medium">See what our clients say</h2>
-          <p className="mt-10">
+          </motion.p>
+          <motion.h2 variants={item} className="text-5xl font-medium">
+            See what our clients say
+          </motion.h2>
+          <motion.p variants={item} className="mt-10">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
             nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum architecto
             asperiores totam fugiat quaerat explicabo rem magnam incidunt.
-          </p>
+          </motion.p>
         </div>
         <div className="lg:w-1/3 lg:flex mt-8 items-end justify-end">
-          <Button label={"Get in touch"} link={"/contact"} />
+          <MotionButton variants={item} label={"Get in touch"} link={"/contact"} />
         </div>
-      </div>
+      </motion.div>
 
-      <div className="flex space-x-8 overflow-x-auto  mt-12">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-40%" }}
+        className="flex space-x-8 overflow-x-auto pt-12"
+      >
         {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={testimonial.id} testimonial={testimonial} index={index} />
+          <MotionTestimonialCard
+            variants={item}
+            key={testimonial.id}
+            testimonial={testimonial}
+            index={index}
+          />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

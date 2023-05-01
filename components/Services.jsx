@@ -61,7 +61,7 @@ const Services = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.6,
         delay: 0.7,
       },
     },
@@ -70,6 +70,11 @@ const Services = () => {
   const item = {
     hidden: { opacity: 0, y: -30 },
     show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
+  };
+
+  const cardItem = {
+    hidden: { opacity: 0, y: -50 },
+    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 1, type: "tween" } },
   };
 
   const label = {
@@ -109,7 +114,7 @@ const Services = () => {
         className="xl:w-1/2 grid sm:grid-rows-11 gap-6"
       >
         {services.map((service) => (
-          <MotionServiceCard variants={item} key={service.id} service={service} />
+          <MotionServiceCard variants={cardItem} key={service.id} service={service} />
         ))}
       </motion.div>
     </section>

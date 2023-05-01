@@ -2,12 +2,15 @@ import React from "react";
 import Image from "next/image";
 import star from "@/assets/star.svg";
 
-const TestimonialCard = ({ testimonial, index }) => {
+const TestimonialCard = React.forwardRef(({ testimonial, index }, testimonialCardRef) => {
   let corner =
     index === 0 ? "rounded-tl-none" : index === 1 ? "rounded-tr-none" : "rounded-bl-none";
 
   return (
-    <article className="min-w-[288px] grow px-8 py-12 rounded-3xl  bg-darkgrey overflow-hidden">
+    <article
+      ref={testimonialCardRef}
+      className="min-w-[288px] grow px-8 py-12 rounded-3xl  bg-darkgrey overflow-hidden"
+    >
       <header className="flex space-x-4 items-center">
         <img
           className={`${corner} w-16 h-16 object-cover rounded-full `}
@@ -32,6 +35,6 @@ const TestimonialCard = ({ testimonial, index }) => {
       />
     </article>
   );
-};
+});
 
 export default TestimonialCard;
