@@ -79,7 +79,7 @@ const Services = () => {
 
   const label = {
     hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { ease: "easeInOut", duration: 0.7 } },
+    show: { opacity: 1, transition: { ease: "easeInOut", duration: 1.2 } },
   };
 
   return (
