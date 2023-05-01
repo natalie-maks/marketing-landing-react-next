@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 
-const BlogArticle = ({ article }) => {
+const BlogArticle = React.forwardRef(({ article }, blogArticleRef) => {
   return (
-    <article className="rounded-3xl bg-darkgrey overflow-hidden">
+    <article ref={blogArticleRef} className="rounded-3xl bg-darkgrey overflow-hidden">
       <img
         className="w-full h-52 object-cover"
         width="1280"
@@ -21,6 +21,6 @@ const BlogArticle = ({ article }) => {
       </div>
     </article>
   );
-};
+});
 
 export default BlogArticle;
