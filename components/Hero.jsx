@@ -32,7 +32,7 @@ const Hero = () => {
     show: {
       opacity: 1,
       transition: {
-        delay: 0.6,
+        delay: 0.8,
         staggerChildren: 0.35,
       },
     },
@@ -48,10 +48,7 @@ const Hero = () => {
   };
 
   return (
-    <section
-      id="hero"
-      className="flex items-center flex-col lg:flex-row gap-20 lg:gap-32 pt-32 mb-40"
-    >
+    <section className="flex items-center flex-col lg:flex-row gap-20 lg:gap-32 pt-32 mb-40">
       <motion.div
         variants={container}
         initial="hidden"

@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import social from "../assets/social.svg";
 import ads from "@/assets/ads.svg";
 import email from "@/assets/email.svg";
@@ -40,26 +42,76 @@ const services = [
     styles: "sm:row-start-6	sm:row-end-[11]",
   },
 ];
+const MotionServiceCard = motion(ServiceCard);
+const MotionButton = motion(Button);
 
 const Services = () => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const cardsContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delay: 0.7,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: -30 },
+    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
+  };
+
+  const label = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { ease: "easeInOut", duration: 0.7 } },
+  };
+
   return (
     <section id="services" className="flex flex-col xl:flex-row items-center gap-12 my-40">
-      <div className="xl:w-1/2">
-        <p className="py-2 px-4 rounded-2xl text-lightgrey border-[1px] border-lightgrey w-fit mb-10">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-30%" }}
+        className="xl:w-1/2"
+      >
+        <motion.p
+          variants={label}
+          className="py-2 px-4 rounded-2xl text-lightgrey border-[1px] border-lightgrey w-fit mb-10"
+        >
           SERVICES
-        </p>
-        <h2 className="text-5xl font-medium">Services we offer</h2>
-        <p className="mt-10 mb-8">
+        </motion.p>
+        <motion.h2 variants={item} className="text-5xl font-medium">
+          Services we offer
+        </motion.h2>
+        <motion.p variants={item} className="mt-10 mb-8">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil
           odio perspiciatis nisi veritatis eius consequuntur!
-        </p>
-        <Button label={"Contact us"} link={"/contact"} />
-      </div>
-      <div className="xl:w-1/2 grid sm:grid-rows-11 gap-6">
+        </motion.p>
+        <MotionButton variants={item} label={"Contact us"} link={"/contact"} />
+      </motion.div>
+      <motion.div
+        variants={cardsContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-40%" }}
+        className="xl:w-1/2 grid sm:grid-rows-11 gap-6"
+      >
         {services.map((service) => (
-          <ServiceCard key={service.id} service={service} />
+          <MotionServiceCard variants={item} key={service.id} service={service} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

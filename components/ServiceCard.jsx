@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 
-const ServiceCard = ({ service }) => {
+const ServiceCard = React.forwardRef(({ service }, serviceCardRef) => {
   return (
-    <div className={`bg-darkgrey rounded-3xl py-8 px-6 ${service.styles}`}>
-      <div className=" p-3 w-fit rounded-3xl bg-blue/5 shadow-md shadow-black/20">
+    <div ref={serviceCardRef} className={`bg-darkgrey rounded-3xl py-8 px-6 ${service.styles}`}>
+      <div className={`p-3 w-fit rounded-3xl bg-${service.color}/5 shadow-md shadow-black/20`}>
         <Image
           width="48"
           height="48"
@@ -17,6 +17,6 @@ const ServiceCard = ({ service }) => {
       <p>{service.text}</p>
     </div>
   );
-};
+});
 
 export default ServiceCard;

@@ -10,7 +10,17 @@ const Nav = () => {
   return (
     <nav className="fixed top-0 z-10 h-20 w-full bg-darkgrey shadow-md shadow-bggrey">
       <div className="container flex items-center justify-between h-full px-4 mx-auto">
-        <Link href="/#hero" scroll={false} aria-label="Main page">
+        <Link
+          href="/"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+          scroll={false}
+          aria-label="Main page"
+        >
           <Image
             src={logo}
             alt="logo"
@@ -27,7 +37,16 @@ const Nav = () => {
             onClick={() => setClicked(false)}
             className="hover:text-darkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
           >
-            <Link href="/#hero" scroll={false}>
+            <Link
+              href="/"
+              scroll={false}
+              onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }}
+            >
               Home
             </Link>
           </li>
