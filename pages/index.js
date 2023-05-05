@@ -6,14 +6,34 @@ import Blog from "@/components/Blog";
 import CallToAction from "@/components/CallToAction";
 
 export default function Home() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: -30 },
+    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
+  };
+
+  const label = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { ease: "easeInOut", duration: 1.2 } },
+  };
+
   return (
-    <main className="container mx-auto px-4 md:px-12">
-      <Hero />
-      <About />
-      <Services />
-      <Testimonials />
-      <Blog />
-      <CallToAction />
+    <main className="container mx-auto px-4 md:px-12 overflow-x-hidden">
+      <Hero container={container} item={item} />
+      <About container={container} item={item} label={label} />
+      <Services container={container} item={item} label={label} />
+      <Testimonials container={container} item={item} label={label} />
+      <Blog container={container} item={item} label={label} />
+      <CallToAction item={item} />
     </main>
   );
 }

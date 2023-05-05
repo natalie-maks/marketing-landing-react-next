@@ -1,54 +1,44 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import Image from "next/image";
+import HeroImages from "./HeroImages";
+import Button from "./UI/Button";
+
 import green from "../assets/green.png";
 import yellow from "@/assets/yellow.png";
 import orange from "@/assets/orange.png";
 import blue from "@/assets/blue.png";
-import Button from "./UI/Button";
 
-const MotionButton = motion(Button);
-const MotionImage = motion(Image);
+const images = [
+  {
+    id: `hero image 1`,
+    color: green,
+    styles: `rounded-br-none lg:row-start-1 lg:row-end-3`,
+    alt: `smiling woman with tablet`,
+  },
+  {
+    id: `hero image 2`,
+    color: yellow,
+    styles: `rounded-bl-none lg:row-start-3 lg:row-end-4`,
+    alt: `smiling woman`,
+  },
+  {
+    id: `hero image 3`,
+    color: blue,
+    styles: `rounded-tr-none lg:row-start-1 lg:row-end-2`,
+    alt: `smiling man`,
+  },
+  {
+    id: `hero image 4`,
+    color: orange,
+    styles: `rounded-tl-none lg:row-start-2 lg:row-end-4`,
+    alt: `smiling man in glasses`,
+  },
+];
 
-const Hero = () => {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: -30 },
-    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
-  };
-
-  const imgContainer = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        delay: 0.8,
-        staggerChildren: 0.35,
-      },
-    },
-  };
-
-  const imgItem = {
-    hidden: { opacity: 0, x: 20 },
-    show: {
-      opacity: 1,
-      x: 0,
-      transition: { ease: "easeInOut", type: "tween", duration: 1 },
-    },
-  };
-
+const Hero = ({ container, item }) => {
   return (
-    <section className="flex items-center flex-col lg:flex-row gap-20 lg:gap-32 pt-32 mb-40">
+    <section className="flex items-center flex-col lg:flex-row gap-20 lg:gap-32 pt-32 mb-20">
       <motion.div
         variants={container}
         initial="hidden"
@@ -65,50 +55,19 @@ const Hero = () => {
           totam fugiat quaerat explicabo rem magnam incidunt.
         </motion.p>
         <div className="flex flex-wrap gap-6">
-          <MotionButton variants={item} label={"Our services"} link={"/#services"} scroll={true} />
-          <MotionButton variants={item} label={"Contact us"} grey={true} link={"/contact"} />
+          <motion.div variants={item}>
+            <Button label={"Our services"} link={"/#services"} scroll={true} />
+          </motion.div>
+          <motion.div variants={item}>
+            <Button label={"Contact us"} grey={true} link={"/contact"} />
+          </motion.div>
         </div>
       </motion.div>
-      <motion.div
-        variants={imgContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="lg:w-2/5 max-h-[460px] 2xl:max-h-[660px] grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-none grid-rows-2 sm:grid-rows-none lg:grid-rows-3 lg:gap-x-12 gap-6"
-      >
-        <MotionImage
-          variants={imgItem}
-          width="640"
-          height="960"
-          alt="smiling woman with tablet"
-          className="h-full w-full object-cover rounded-full rounded-br-none lg:row-start-1 lg:row-end-3"
-          src={green}
-        />
-        <MotionImage
-          variants={imgItem}
-          width="640"
-          height="960"
-          alt="smiling woman"
-          className="h-full w-full object-cover rounded-full rounded-bl-none lg:row-start-3 lg:row-end-4"
-          src={yellow}
-        />
-        <MotionImage
-          variants={imgItem}
-          width="640"
-          height="960"
-          alt="smiling man"
-          className="h-full w-full object-cover rounded-full rounded-tr-none lg:row-start-1 lg:row-end-2"
-          src={blue}
-        />
-        <MotionImage
-          variants={imgItem}
-          width="640"
-          height="960"
-          alt="smiling man in glasses"
-          className="h-full w-full object-cover rounded-full rounded-tl-none lg:row-start-2 lg:row-end-4"
-          src={orange}
-        />
-      </motion.div>
+      <div className="lg:w-2/5 max-h-[460px] 2xl:max-h-[660px] grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-none grid-rows-2 sm:grid-rows-none lg:grid-rows-3 lg:gap-x-12 gap-6">
+        {images.map((image, index) => (
+          <HeroImages key={image.id} image={image} index={index} />
+        ))}
+      </div>
     </section>
   );
 };

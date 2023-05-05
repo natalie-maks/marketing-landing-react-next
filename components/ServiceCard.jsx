@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
-const ServiceCard = React.forwardRef(({ service }, serviceCardRef) => {
+const ServiceCard = ({ service, index }) => {
+  const [delay, setDelay] = useState(0);
+
+  useEffect(() => {
+    if (window.innerWidth >= 640) setDelay(index * 0.3);
+    if (window.innerWidth >= 1280) setDelay(1.1 + index * 0.3);
+  }, []);
+
   return (
-    <div ref={serviceCardRef} className={`bg-darkgrey rounded-3xl py-8 px-6 ${service.styles}`}>
+    <motion.div
+      initial={{ opacity: 0, y: -30 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{ ease: "easeInOut", duration: 0.5, type: "tween", delay: delay }}
+      viewport={{ once: true, margin: "-20%" }}
+      className={`bg-darkgrey rounded-3xl py-8 px-6 ${service.styles}`}
+    >
       <div className={`p-3 w-fit rounded-3xl bg-${service.color}/5 shadow-md shadow-black/20`}>
         <Image
           width="48"
@@ -15,8 +32,8 @@ const ServiceCard = React.forwardRef(({ service }, serviceCardRef) => {
       </div>
       <h3 className="my-3 font-medium">{service.title}</h3>
       <p>{service.text}</p>
-    </div>
+    </motion.div>
   );
-});
+};
 
 export default ServiceCard;

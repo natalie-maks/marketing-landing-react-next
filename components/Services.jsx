@@ -42,48 +42,10 @@ const services = [
     styles: "sm:row-start-6	sm:row-end-[11]",
   },
 ];
-const MotionServiceCard = motion(ServiceCard);
-const MotionButton = motion(Button);
 
-const Services = () => {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const cardsContainer = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.6,
-        delay: 0.7,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: -30 },
-    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
-  };
-
-  const cardItem = {
-    hidden: { opacity: 0, y: -50 },
-    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 1, type: "tween" } },
-  };
-
-  const label = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { ease: "easeInOut", duration: 1.2 } },
-  };
-
+const Services = ({ container, item, label }) => {
   return (
-    <section id="services" className="flex flex-col xl:flex-row items-center gap-12 my-40">
+    <section id="services" className="flex flex-col xl:flex-row items-center gap-12 pt-20 mb-40">
       <motion.div
         variants={container}
         initial="hidden"
@@ -104,19 +66,15 @@ const Services = () => {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil
           odio perspiciatis nisi veritatis eius consequuntur!
         </motion.p>
-        <MotionButton variants={item} label={"Contact us"} link={"/contact"} />
+        <motion.div variants={item}>
+          <Button label={"Contact us"} link={"/contact"} />
+        </motion.div>
       </motion.div>
-      <motion.div
-        variants={cardsContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-40%" }}
-        className="xl:w-1/2 grid sm:grid-rows-11 gap-6"
-      >
-        {services.map((service) => (
-          <MotionServiceCard variants={cardItem} key={service.id} service={service} />
+      <div className="xl:w-1/2 grid sm:grid-rows-11 gap-6">
+        {services.map((service, index) => (
+          <ServiceCard key={service.id} service={service} index={index} />
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };

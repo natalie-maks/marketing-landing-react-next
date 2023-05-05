@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import AboutMetrics from "./AboutMetrics";
@@ -31,31 +31,21 @@ const metrics = [
   },
 ];
 
-const MotionAboutMetrics = motion(AboutMetrics);
 const MotionImage = motion(Image);
 
-const About = () => {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
+const About = ({ container, item, label }) => {
+  const [delay, setDelay] = useState(0);
 
-  const item = {
-    hidden: { opacity: 0, y: -30 },
-    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
-  };
+  useEffect(() => {
+    if (window.innerWidth >= 1024) setDelay(0.7);
+  }, []);
 
   const imgItem = {
     hidden: { opacity: 0, x: 20 },
     show: {
       opacity: 1,
       x: 0,
-      transition: { ease: "easeInOut", type: "tween", duration: 1 },
+      transition: { ease: "easeInOut", type: "tween", duration: 1, delay: delay },
     },
   };
 
@@ -64,28 +54,23 @@ const About = () => {
     show: {
       opacity: 1,
       x: 0,
-      transition: { ease: "easeInOut", type: "tween", duration: 1, delay: 0.7 },
+      transition: { ease: "easeInOut", type: "tween", duration: 1, delay: delay },
     },
   };
 
-  const label = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { ease: "easeInOut", duration: 1.2 } },
-  };
-
   return (
-    <section id="about" className="my-40">
+    <section id="about" className="pt-20 mb-20">
       <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-30%" }}
-          className="w-full md:h-[400px] lg:h-auto lg:w-1/2 lg:self-stretch flex space-x-4 lg:space-x-8"
+          className="w-full max-h-[360px] lg:max-h-none lg:w-1/3 xl:w-1/2 lg:self-stretch flex"
         >
           <MotionImage
             variants={imgItemLeft}
-            className="w-3/5 h-auto object-cover rounded-full rounded-tr-none"
+            className="w-3/5 lg:w-full xl:w-3/5 h-auto object-cover rounded-full rounded-tr-none pr-4 xl:pr-8"
             width="612"
             height="853"
             alt="smiling woman"
@@ -93,7 +78,7 @@ const About = () => {
           />
           <MotionImage
             variants={imgItemLeft}
-            className="w-2/5 h-auto lg:h-2/5 lg:self-end object-cover rounded-full rounded-bl-none"
+            className="lg:hidden xl:flex w-2/5 h-auto lg:h-3/5 lg:self-end object-cover rounded-full rounded-bl-none"
             width="640"
             height="960"
             alt="smiling man"
@@ -105,7 +90,7 @@ const About = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-30%" }}
-          className="lg:w-1/2 lg:my-20"
+          className="lg:w-2/3 xl:w-1/2 lg:my-20"
         >
           <motion.p
             variants={label}
@@ -136,27 +121,24 @@ const About = () => {
           </ul>
         </motion.div>
       </div>
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-30%" }}
-        className="flex flex-col lg:flex-row w-full gap-16 mt-40"
-      >
+      <div className="flex flex-col lg:flex-row w-full gap-16 mt-40">
         <div className="grid sm:grid-cols-2 gap-6">
-          {metrics.map((metric) => (
-            <MotionAboutMetrics variants={item} key={metric.id} metric={metric} />
+          {metrics.map((metric, index) => (
+            <AboutMetrics variants={item} key={metric.id} metric={metric} index={index} />
           ))}
         </div>
         <MotionImage
+          initial="hidden"
+          whileInView="show"
           variants={imgItem}
-          className="max-h-[520px] w-full  object-cover rounded-full rounded-tl-none"
+          viewport={{ once: true, margin: "-20%" }}
+          className="h-[300px] lg:h-auto max-h-[520px] w-full object-cover rounded-full rounded-tl-none"
           width="640"
           height="960"
           alt="smiling man"
           src={yellow2}
         />
-      </motion.div>
+      </div>
     </section>
   );
 };

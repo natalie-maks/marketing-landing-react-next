@@ -32,31 +32,10 @@ const testimonials = [
 ];
 
 const MotionTestimonialCard = motion(TestimonialCard);
-const MotionButton = motion(Button);
 
-const Testimonials = () => {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: -30 },
-    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
-  };
-
-  const label = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { ease: "easeInOut", duration: 1.2 } },
-  };
-
+const Testimonials = ({ container, item, label }) => {
   return (
-    <section className="my-40">
+    <section>
       <motion.div
         variants={container}
         initial="hidden"
@@ -81,7 +60,9 @@ const Testimonials = () => {
           </motion.p>
         </div>
         <div className="lg:w-1/3 lg:flex mt-8 items-end justify-end">
-          <MotionButton variants={item} label={"Get in touch"} link={"/contact"} />
+          <motion.div variants={item}>
+            <Button label={"Get in touch"} link={"/contact"} />
+          </motion.div>
         </div>
       </motion.div>
 

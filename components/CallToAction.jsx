@@ -2,18 +2,15 @@ import React from "react";
 import Button from "./UI/Button";
 import { motion } from "framer-motion";
 
-const MotionButton = motion(Button);
-
-const CallToAction = () => {
+const CallToAction = ({ item }) => {
   const container = {
-    hidden: { opacity: 0, y: -20 },
+    hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      y: 0,
       transition: {
+        staggerChildren: 0.3,
         duration: 0.7,
         delayChildren: 0.5,
-        staggerChildren: 0.3,
       },
     },
   };
@@ -22,18 +19,14 @@ const CallToAction = () => {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
   };
-  const item = {
-    hidden: { opacity: 0, y: -30 },
-    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 1, type: "tween" } },
-  };
 
   return (
     <motion.div
-      variants={container}
       initial="hidden"
       whileInView="show"
+      variants={container}
       viewport={{ once: true, margin: "-30%" }}
-      className="my-40 bg-darkgrey py-12 px-12 rounded-3xl flex flex-col lg:flex-row items-center justify-around space-y-8 lg:space-y-0"
+      className="mt-40 mb-20 bg-darkgrey py-12 px-12 rounded-3xl flex flex-col lg:flex-row items-center justify-around space-y-8 lg:space-y-0"
     >
       <div className="lg:w-1/2 max-w-[440px] flex flex-col">
         <motion.h2
@@ -47,8 +40,12 @@ const CallToAction = () => {
         </motion.p>
       </div>
       <div className="lg:w-1/2 max-w-[440px] flex flex-wrap justify-center gap-6">
-        <MotionButton variants={item} label={"Our services"} link={"/#services"} scroll={true} />
-        <MotionButton variants={item} label={"Contact us"} grey={true} link={"/contact"} />
+        <motion.div variants={item}>
+          <Button label={"Our services"} link={"/#services"} scroll={true} />
+        </motion.div>
+        <motion.div variants={item}>
+          <Button label={"Contact us"} grey={true} link={"/contact"} />
+        </motion.div>
       </div>
     </motion.div>
   );

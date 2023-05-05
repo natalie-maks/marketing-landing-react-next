@@ -39,42 +39,21 @@ const blogArticles = [
   },
 ];
 
-const MotionBlogArticle = motion(BlogArticle);
-const MotionButton = motion(Button);
-
-const Blog = () => {
+const Blog = ({ container, item, label }) => {
   const [articles, setArticles] = useState(3);
-
-  const handleResize = () => {
-    if (window.innerWidth > 768) setArticles(4);
-    if (window.innerWidth > 1280) setArticles(3);
-  };
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
+    handleResize();
   }, []);
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
+  const handleResize = () => {
+    if (window.innerWidth >= 768) setArticles(4);
+    if (window.innerWidth >= 1280) setArticles(3);
   };
 
-  const item = {
-    hidden: { opacity: 0, y: -30 },
-    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
-  };
-
-  const label = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { ease: "easeInOut", duration: 1.2 } },
-  };
   return (
-    <section id="blog" className="my-40">
+    <section id="blog" className="pt-28 mt-12">
       <motion.div
         variants={container}
         initial="hidden"
@@ -99,23 +78,19 @@ const Blog = () => {
           </motion.p>
         </div>
         <div className="lg:w-1/3 lg:flex mt-8 items-end justify-end">
-          <MotionButton variants={item} label={"All posts"} link={"articles"} />
+          <motion.div variants={item}>
+            <Button label={"All posts"} link={"articles"} />
+          </motion.div>
         </div>
       </motion.div>
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-40%" }}
-        className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 mt-12"
-      >
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 mt-12">
         {blogArticles.map((article, index) => {
           for (let i = 0; index < articles; i++) {
-            return <MotionBlogArticle variants={item} key={article.slug} article={article} />;
+            return <BlogArticle key={article.slug} article={article} index={index} />;
           }
         })}
-      </motion.div>
+      </div>
     </section>
   );
 };
