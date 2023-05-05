@@ -8,22 +8,60 @@ import linkedin from "@/assets/linkedin-icon.svg";
 import twitter from "@/assets/twitter-icon.svg";
 import youtube from "@/assets/youtube-icon.svg";
 
+import { motion } from "framer-motion";
+
 const Footer = () => {
+  const footer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: -30 },
+    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
+  };
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
+  };
   return (
-    <footer className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-16 sm:gap-12 lg:gap-8 xl:gap-12 my-20 px-4 md:px-12">
-      <div>
-        <Image
-          src={logo}
-          alt="logo"
-          width="250"
-          height="80"
-          className="h-10  w-fit object-scale-down"
-        />
-        <p className="my-8">
+    <motion.footer
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "-20%" }}
+      variants={footer}
+      className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-16 sm:gap-12 lg:gap-8 xl:gap-12 my-20 px-4 md:px-12"
+    >
+      <motion.div variants={container}>
+        <motion.div variants={item}>
+          <Image
+            src={logo}
+            alt="logo"
+            width="250"
+            height="80"
+            className="h-10  w-fit object-scale-down"
+          />
+        </motion.div>
+        <motion.p variants={item} className="my-8">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil
           odio perspiciatis nisi veritatis eius consequuntur!
-        </p>
-        <a
+        </motion.p>
+        <motion.a
+          variants={fadeIn}
           className="inline-block mr-3 xl:mr-4 w-11 h-11 p-3 rounded-full border-[1px] border-lightgrey hover:border-white transition-all group"
           href="https://www.instagram.com/"
           target="_blank"
@@ -36,8 +74,9 @@ const Footer = () => {
             className="w-full h-full opacity-50 group-hover:opacity-100"
             alt="Instagram"
           />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          variants={fadeIn}
           className="inline-block mr-3 xl:mr-4 w-11 h-11 p-3 rounded-full border-[1px] border-lightgrey hover:border-white transition-all group"
           href="https://twitter.com/?lang=en/"
           target="_blank"
@@ -50,8 +89,9 @@ const Footer = () => {
             className="w-full h-full opacity-50 group-hover:opacity-100"
             alt="Twitter"
           />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          variants={fadeIn}
           className="inline-block mr-3 xl:mr-4 w-11 h-11 p-3 rounded-full border-[1px] border-lightgrey hover:border-white transition-all group"
           href="https://www.facebook.com/"
           target="_blank"
@@ -64,8 +104,9 @@ const Footer = () => {
             className="w-full h-full opacity-50 group-hover:opacity-100"
             alt="Facebook"
           />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          variants={fadeIn}
           className="inline-block mr-3 xl:mr-4 w-11 h-11 p-3 rounded-full border-[1px] border-lightgrey hover:border-white transition-all group"
           href="https://www.youtube.com/"
           target="_blank"
@@ -78,8 +119,9 @@ const Footer = () => {
             className="w-full h-full opacity-50 group-hover:opacity-100"
             alt="Youtube"
           />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          variants={fadeIn}
           className="inline-block mr-3 w-11 h-11 p-3 rounded-full border-[1px] border-lightgrey hover:border-white transition-all group"
           href="https://www.linkedin.com/"
           target="_blank"
@@ -92,54 +134,64 @@ const Footer = () => {
             className="w-full h-full opacity-50 group-hover:opacity-100"
             alt="LinkedIn"
           />
-        </a>
-      </div>
-      <div>
-        <h3 className="text-xl font-medium">Pages</h3>
+        </motion.a>
+      </motion.div>
+      <motion.div variants={container}>
+        <motion.h3 variants={item} className="text-xl font-medium">
+          Pages
+        </motion.h3>
         <ul className="pt-6 grid grid-cols-2 gap-3">
-          <li>
+          <motion.li variants={item}>
             <Link className="hover:text-white transition-all" href="/">
               Home
             </Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={item}>
             <Link className="hover:text-white transition-all" href="/">
               About
             </Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={item}>
             <Link className="hover:text-white transition-all" href="/">
               Services
             </Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={item}>
             <Link className="hover:text-white transition-all" href="/">
               Blog
             </Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li variants={item}>
             <Link className="hover:text-white transition-all" href="/">
               Contacts
             </Link>
-          </li>
+          </motion.li>
         </ul>
-      </div>
-      <div className="sm:col-span-2 lg:col-span-1">
-        <h3 className="text-xl font-medium">Subscribe to our newsletter</h3>
-        <p className="my-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
+      </motion.div>
+      <motion.div variants={container} className="sm:col-span-2 lg:col-span-1">
+        <motion.h3 variants={item} className="text-xl font-medium">
+          Subscribe to our newsletter
+        </motion.h3>
+        <motion.p variants={item} className="my-6">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit
+        </motion.p>
         <form className="flex flex-col sm:flex-row lg:flex-col xl:flex-row">
-          <input
+          <motion.input
+            variants={item}
             className="py-3 px-6 mr-3 mb-4 w-full bg-transparent border-[1px] border-lightgrey rounded-3xl"
             type="email"
             required
             placeholder="Your email address"
           />
-          <button className="text-white py-3 px-6 mb-4 rounded-full bg-blue hover:translate-y-[-2px] shadow-md hover:shadow-darkblue">
+          <motion.button
+            variants={item}
+            className="text-white py-3 px-6 mb-4 rounded-full bg-blue hover:translate-y-[-2px] shadow-md hover:shadow-darkblue"
+          >
             Subscribe
-          </button>
+          </motion.button>
         </form>
-      </div>
-    </footer>
+      </motion.div>
+    </motion.footer>
   );
 };
 

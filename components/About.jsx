@@ -59,7 +59,7 @@ const About = ({ container, item, label }) => {
   };
 
   return (
-    <section id="about" className="pt-20 mb-20">
+    <section id="about" className="pt-28 mt-12 lg:pt-20 lg:mt-20">
       <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
         <motion.div
           variants={container}

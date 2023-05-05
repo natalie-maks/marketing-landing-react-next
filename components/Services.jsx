@@ -45,7 +45,10 @@ const services = [
 
 const Services = ({ container, item, label }) => {
   return (
-    <section id="services" className="flex flex-col xl:flex-row items-center gap-12 pt-20 mb-40">
+    <section
+      id="services"
+      className="flex flex-col xl:flex-row items-center gap-12 pt-28 mt-12 mb-40"
+    >
       <motion.div
         variants={container}
         initial="hidden"
