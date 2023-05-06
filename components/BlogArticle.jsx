@@ -17,7 +17,7 @@ const BlogArticle = ({ article, index }) => {
       }}
       transition={{ ease: "easeInOut", duration: 0.7, type: "tween", delay: delay }}
       viewport={{ once: true, margin: "-30%" }}
-      className="rounded-3xl bg-darkgrey overflow-hidden"
+      className="rounded-3xl bg-darkgrey overflow-hidden flex flex-col"
     >
       <img
         className="w-full h-52 object-cover"
@@ -26,11 +26,14 @@ const BlogArticle = ({ article, index }) => {
         src={article.img}
         alt={article.title}
       />
-      <div className="p-8">
+      <div className="grow p-8 flex flex-col">
         <time>{article.createdAt}</time>
-        <h3 className="text-lg mt-4 mb-6">{article.title}</h3>
-        <p>{article.excerpt}</p>
-        <Link className="text-linkblue hover:text-darkblue mt-4 font-medium block" href="/">
+        <h3 className="text-lg mt-4 mb-6 md:min-h-[56px]">{article.title}</h3>
+        <p className="grow">{article.excerpt}</p>
+        <Link
+          className="text-linkblue hover:text-darkblue mt-4 font-medium block"
+          href={`/articles/${article.slug}`}
+        >
           Read now
         </Link>
       </div>
