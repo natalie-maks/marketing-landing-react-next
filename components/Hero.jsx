@@ -38,7 +38,7 @@ const images = [
 
 const Hero = ({ container, item }) => {
   return (
-    <section className="flex items-center flex-col lg:flex-row gap-20 lg:gap-32 pt-32 mb-20">
+    <section className="flex items-center flex-col lg:flex-row gap-20 lg:gap-32 pt-12 mb-20">
       <motion.div
         variants={container}
         initial="hidden"

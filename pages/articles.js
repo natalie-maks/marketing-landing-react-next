@@ -4,7 +4,7 @@ import ArticlesCard from "@/components/ArticlesCard";
 
 const articles = ({ articles }) => {
   return (
-    <main className="container mx-auto px-4 md:px-12 my-20 overflow-x-hidden">
+    <>
       <h1 className="text-3xl font-semibold mt-12">All about Marketing, SEO etc.</h1>
       <p className="mt-6 mb-12 text-lg">
         The most interestng and articles on latest strategies, insights & tools for digital
@@ -15,7 +15,7 @@ const articles = ({ articles }) => {
           <ArticlesCard key={article.slug} article={article} />
         ))}
       </div>
-    </main>
+    </>
   );
 };
 

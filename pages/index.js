@@ -28,14 +28,14 @@ export default function Home({ articles }) {
   };
 
   return (
-    <main className="container mx-auto px-4 md:px-12 overflow-x-hidden">
+    <>
       <Hero container={container} item={item} />
       <About container={container} item={item} label={label} />
       <Services container={container} item={item} label={label} />
       <Testimonials container={container} item={item} label={label} />
       <Blog articles={articles} container={container} item={item} label={label} />
       <CallToAction item={item} />
-    </main>
+    </>
   );
 }
 
