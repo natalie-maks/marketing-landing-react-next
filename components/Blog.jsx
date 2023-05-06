@@ -4,43 +4,8 @@ import { motion } from "framer-motion";
 import BlogArticle from "./BlogArticle";
 import Button from "./UI/Button";
 
-const blogArticles = [
-  {
-    title: "How to use social proof in marketing",
-    slug: "how-to-use",
-    excerpt:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
-    createdAt: "August 28, 2022",
-    img: "/post1.jpg",
-  },
-  {
-    title: "Make a great first impression with this titles",
-    slug: "make-a-great",
-    excerpt:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
-    createdAt: "August 26, 2022",
-    img: "/post2.jpg",
-  },
-  {
-    title: "How to grab your reader's attention",
-    slug: "how-to-grab",
-    excerpt:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
-    createdAt: "August 25, 2022",
-    img: "/post3.jpg",
-  },
-  {
-    title: "11 Useful Sites to Find a Hashtag For Social Media",
-    slug: "11-useful-sites",
-    excerpt:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
-    createdAt: "August 22, 2022",
-    img: "/post4.jpg",
-  },
-];
-
-const Blog = ({ container, item, label }) => {
-  const [articles, setArticles] = useState(3);
+const Blog = ({ articles, container, item, label }) => {
+  const [number, setNumber] = useState(3);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -48,8 +13,8 @@ const Blog = ({ container, item, label }) => {
   }, []);
 
   const handleResize = () => {
-    if (window.innerWidth >= 768) setArticles(4);
-    if (window.innerWidth >= 1280) setArticles(3);
+    if (window.innerWidth >= 768) setNumber(4);
+    if (window.innerWidth >= 1280) setNumber(3);
   };
 
   return (
@@ -85,8 +50,8 @@ const Blog = ({ container, item, label }) => {
       </motion.div>
 
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 mt-12">
-        {blogArticles.map((article, index) => {
-          for (let i = 0; index < articles; i++) {
+        {articles.map((article, index) => {
+          for (let i = 0; index < number; i++) {
             return <BlogArticle key={article.slug} article={article} index={index} />;
           }
         })}

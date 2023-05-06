@@ -4,8 +4,9 @@ import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import Blog from "@/components/Blog";
 import CallToAction from "@/components/CallToAction";
+import { getArticles } from "../lib/localdata";
 
-export default function Home() {
+export default function Home({ articles }) {
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -32,8 +33,16 @@ export default function Home() {
       <About container={container} item={item} label={label} />
       <Services container={container} item={item} label={label} />
       <Testimonials container={container} item={item} label={label} />
-      <Blog container={container} item={item} label={label} />
+      <Blog articles={articles} container={container} item={item} label={label} />
       <CallToAction item={item} />
     </main>
   );
+}
+
+export async function getStaticProps() {
+  const articles = await getArticles();
+
+  return {
+    props: { articles },
+  };
 }

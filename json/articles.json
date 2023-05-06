@@ -1,0 +1,48 @@
+[
+  {
+    "title": "How to use social proof in marketing",
+    "slug": "how-to-use",
+    "excerpt": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
+    "createdAt": "August 28, 2022",
+    "img": "/post1.jpg",
+    "body": {
+      "h2": "Hello world",
+      "p": "This is paragraph"
+    }
+  },
+  {
+    "title": "Make a great first impression with this titles",
+    "slug": "make-a-great",
+    "excerpt": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
+    "createdAt": "August 26, 2022",
+    "img": "/post2.jpg"
+  },
+  {
+    "title": "How to grab your reader's attention",
+    "slug": "how-to-grab",
+    "excerpt": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
+    "createdAt": "August 25, 2022",
+    "img": "/post3.jpg"
+  },
+  {
+    "title": "11 Useful Sites to Find a Hashtag For Social Media",
+    "slug": "11-useful-sites",
+    "excerpt": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
+    "createdAt": "August 22, 2022",
+    "img": "/post4.jpg"
+  },
+  {
+    "title": "12 Useful Sites to Find a Hashtag For Social Media",
+    "slug": "12-useful-sites",
+    "excerpt": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
+    "createdAt": "August 22, 2022",
+    "img": "/post4.jpg"
+  },
+  {
+    "title": "13 Useful Sites to Find a Hashtag For Social Media",
+    "slug": "13-useful-sites",
+    "excerpt": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur",
+    "createdAt": "August 22, 2022",
+    "img": "/post4.jpg"
+  }
+]
