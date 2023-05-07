@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 
+import FormInput from "../UI/FormInput.jsx";
+
 import { item, footerColCont } from "../../assets/motionConst.js";
+
+const MotionInput = motion(FormInput);
 
 const FooterCol3 = () => {
   return (
@@ -12,12 +16,11 @@ const FooterCol3 = () => {
         Lorem ipsum dolor, sit amet consectetur adipisicing elit
       </motion.p>
       <form className="flex flex-col sm:flex-row lg:flex-col xl:flex-row">
-        <motion.input
+        <MotionInput
           variants={item}
-          className="py-3 px-6 mr-3 mb-4 w-full bg-transparent border-[1px] border-lightgrey rounded-3xl"
-          type="email"
-          required
-          placeholder="Your email address"
+          type={"email"}
+          id={"newsletter-email"}
+          placeholder={"Your email address"}
         />
         <motion.button
           variants={item}
