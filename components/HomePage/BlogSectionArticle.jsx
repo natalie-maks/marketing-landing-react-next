@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const BlogArticle = ({ article, index }) => {
+const BlogSectionArticle = ({ article, index }) => {
   const [delay, setDelay] = useState(0);
 
   useEffect(() => {
     if (window.innerWidth >= 640) setDelay(index * 0.3);
   }, []);
+
   return (
     <motion.article
       initial={{ opacity: 0, y: -30 }}
@@ -41,4 +42,4 @@ const BlogArticle = ({ article, index }) => {
   );
 };
 
-export default BlogArticle;
+export default BlogSectionArticle;

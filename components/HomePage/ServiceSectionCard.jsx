@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const ServiceCard = ({ service, index }) => {
+const ServiceSectionCard = ({ service, index }) => {
   const [delay, setDelay] = useState(0);
+
+  useEffect(() => {
+    if (window.innerWidth >= 640) setDelay(index * 0.3);
+    if (window.innerWidth >= 1280) setDelay(1.1 + index * 0.3);
+  }, []);
 
   let color;
   let colorShade;
@@ -25,11 +30,6 @@ const ServiceCard = ({ service, index }) => {
       color = "bg-blue";
       colorShade = "bg-blue/5";
   }
-
-  useEffect(() => {
-    if (window.innerWidth >= 640) setDelay(index * 0.3);
-    if (window.innerWidth >= 1280) setDelay(1.1 + index * 0.3);
-  }, []);
 
   return (
     <motion.div
@@ -57,4 +57,4 @@ const ServiceCard = ({ service, index }) => {
   );
 };
 
-export default ServiceCard;
+export default ServiceSectionCard;

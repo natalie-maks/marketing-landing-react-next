@@ -1,8 +1,10 @@
-import React from "react";
-import Button from "./UI/Button";
 import { motion } from "framer-motion";
 
-const CallToAction = ({ item }) => {
+import Button from "../UI/Button";
+
+import { item } from "../../assets/motionConst.js";
+
+const CallToAction = () => {
   const container = {
     hidden: { opacity: 0 },
     show: {

@@ -1,6 +1,6 @@
-import React from "react";
-import AnimationPage from "@/components/AnimationPage";
 import { motion } from "framer-motion";
+
+import AnimationPage from "@/components/AnimationPage";
 
 const contact = () => {
   return (

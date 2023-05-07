@@ -1,7 +1,6 @@
-import React from "react";
 import Link from "next/link";
 
-const ArticlesCard = ({ article }) => {
+const ArticlesPageCard = ({ article }) => {
   return (
     <article className="rounded-3xl bg-darkgrey overflow-hidden flex flex-col">
       <img
@@ -22,4 +21,4 @@ const ArticlesCard = ({ article }) => {
   );
 };
 
-export default ArticlesCard;
+export default ArticlesPageCard;

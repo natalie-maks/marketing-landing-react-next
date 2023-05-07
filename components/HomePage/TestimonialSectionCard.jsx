@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
+
 import star from "@/assets/star.svg";
 
-const TestimonialCard = React.forwardRef(({ testimonial, index }, testimonialCardRef) => {
+const TestimonialSectionCard = React.forwardRef(({ testimonial, index }, testimonialCardRef) => {
   let corner =
     index === 0 ? "rounded-tl-none" : index === 1 ? "rounded-tr-none" : "rounded-bl-none";
 
@@ -37,4 +38,4 @@ const TestimonialCard = React.forwardRef(({ testimonial, index }, testimonialCar
   );
 });
 
-export default TestimonialCard;
+export default TestimonialSectionCard;

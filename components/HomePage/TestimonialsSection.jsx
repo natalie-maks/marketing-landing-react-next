@@ -1,8 +1,14 @@
-import React from "react";
 import { motion } from "framer-motion";
 
-import TestimonialCard from "./TestimonialCard";
-import Button from "./UI/Button";
+import TestimonialSectionCard from "./TestimonialSectionCard";
+
+import SectionLabel from "./homeAssets/SectionLabel";
+import HomeHeaders from "./homeAssets/HomeHeaders";
+import HomeParagraph from "./homeAssets/HomeParagraph";
+import MotionDiv from "./homeAssets/MotionDiv";
+import Button from "../UI/Button";
+
+import { item } from "../../assets/motionConst.js";
 
 const testimonials = [
   {
@@ -31,59 +37,39 @@ const testimonials = [
   },
 ];
 
-const MotionTestimonialCard = motion(TestimonialCard);
+const MotionTestimonialSectionCard = motion(TestimonialSectionCard);
 
-const Testimonials = ({ container, item, label }) => {
+const TestimonialsSection = () => {
+  const paragraph =
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecatim nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum architecto asperiores totam fugiat quaerat explicabo rem magnam incidunt.";
+
   return (
     <section>
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-30%" }}
-        className="flex flex-col lg:flex-row"
-      >
+      <MotionDiv styles={"flex flex-col lg:flex-row"} margin={"-30%"}>
         <div className="lg:w-2/3">
-          <motion.p
-            variants={label}
-            className="py-2 px-4 rounded-2xl text-lightgrey border-[1px] border-lightgrey w-fit mb-10"
-          >
-            TESTIMONIALS
-          </motion.p>
-          <motion.h2 variants={item} className="text-5xl font-medium">
-            See what our clients say
-          </motion.h2>
-          <motion.p variants={item} className="mt-10">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati
-            nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum architecto
-            asperiores totam fugiat quaerat explicabo rem magnam incidunt.
-          </motion.p>
+          <SectionLabel text={"TESTIMONIALS"} />
+          <HomeHeaders text={"See what our clients say"} />
+          <HomeParagraph text={paragraph} />
         </div>
         <div className="lg:w-1/3 lg:flex mt-8 items-end justify-end">
           <motion.div variants={item}>
             <Button label={"Get in touch"} link={"/contact"} />
           </motion.div>
         </div>
-      </motion.div>
+      </MotionDiv>
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-40%" }}
-        className="flex space-x-8 overflow-x-auto pt-12"
-      >
+      <MotionDiv styles={"flex space-x-8 overflow-x-auto pt-12"} margin={"-40%"}>
         {testimonials.map((testimonial, index) => (
-          <MotionTestimonialCard
+          <MotionTestimonialSectionCard
             variants={item}
             key={testimonial.id}
             testimonial={testimonial}
             index={index}
           />
         ))}
-      </motion.div>
+      </MotionDiv>
     </section>
   );
 };
 
-export default Testimonials;
+export default TestimonialsSection;

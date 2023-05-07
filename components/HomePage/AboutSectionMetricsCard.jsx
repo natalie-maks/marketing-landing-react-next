@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const AboutMetrics = ({ metric, index }) => {
+const AboutSectionMetricsCard = ({ metric, index }) => {
   const [delay, setDelay] = useState(0.3);
 
   useEffect(() => {
@@ -25,4 +25,4 @@ const AboutMetrics = ({ metric, index }) => {
   );
 };
 
-export default AboutMetrics;
+export default AboutSectionMetricsCard;

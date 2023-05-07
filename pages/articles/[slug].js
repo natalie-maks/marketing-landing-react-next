@@ -1,8 +1,9 @@
-import React from "react";
-import { getArticles } from "../../lib/localdata";
-import AnimationPage from "@/components/AnimationPage";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
+import { getArticles } from "../../lib/localdata";
+
+import AnimationPage from "@/components/AnimationPage";
 import Button from "@/components/UI/Button";
 
 const Article = ({ article, recomendedArticles }) => {

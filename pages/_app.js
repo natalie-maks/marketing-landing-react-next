@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
-import Layout from "@/components/Layout";
-import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
+import { AnimatePresence } from "framer-motion";
+import Layout from "@/components/Layout";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
     path = router.asPath;
   }
   const onExitComplete = () => {
-    if (router.asPath == "/#about" || router.asPath == "/#services" || router.asPath == "/#blog") {
+    if (router.asPath == "/#about" || router.asPath == "/#services") {
       setTimeout(() => {
         window.location.href = router.asPath;
       }, 100);
@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <Layout>
-      <AnimatePresence onExitComplete={onExitComplete} mode="wait" initial={false}>
+      <AnimatePresence onExitComplete={onExitComplete} mode="wait">
         <Component key={path} {...pageProps} />
       </AnimatePresence>
     </Layout>

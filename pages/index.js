@@ -1,41 +1,22 @@
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
-import Testimonials from "@/components/Testimonials";
-import Blog from "@/components/Blog";
-import CallToAction from "@/components/CallToAction";
 import { getArticles } from "../lib/localdata";
+
 import AnimationPage from "@/components/AnimationPage";
+import HeroSection from "@/components/HomePage/HeroSection";
+import AboutSection from "@/components/HomePage/AboutSection";
+import ServicesSection from "@/components/HomePage/ServicesSection";
+import TestimonialsSection from "@/components/HomePage/TestimonialsSection";
+import BlogSection from "@/components/HomePage/BlogSection";
+import HomePageCallToAction from "@/components/HomePage/HomePageCallToAction";
 
 export default function Home({ articles }) {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: -30 },
-    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
-  };
-
-  const label = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { ease: "easeInOut", duration: 1.2 } },
-  };
-
   return (
     <AnimationPage>
-      <Hero container={container} item={item} />
-      <About container={container} item={item} label={label} />
-      <Services container={container} item={item} label={label} />
-      <Testimonials container={container} item={item} label={label} />
-      <Blog articles={articles} container={container} item={item} label={label} />
-      <CallToAction item={item} />
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <TestimonialsSection />
+      <BlogSection articles={articles} />
+      <HomePageCallToAction />
     </AnimationPage>
   );
 }

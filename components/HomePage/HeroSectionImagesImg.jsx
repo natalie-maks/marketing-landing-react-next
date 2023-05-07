@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const MotionImage = motion(Image);
 
-const HeroImages = ({ image, index }) => {
+const HeroSectionImagesImg = ({ image, index }) => {
   const [delay, setDelay] = useState(index * 0.3);
 
   useEffect(() => {
     if (window.innerWidth >= 640) setDelay(0.8 + index * 0.2);
   }, []);
+
   return (
     <MotionImage
       initial={{ opacity: 0, x: 50 }}
@@ -29,4 +29,4 @@ const HeroImages = ({ image, index }) => {
   );
 };
 
-export default HeroImages;
+export default HeroSectionImagesImg;

@@ -1,7 +1,8 @@
-import React from "react";
-import { getArticles } from "../lib/localdata";
-import ArticlesCard from "@/components/ArticlesCard";
 import { motion } from "framer-motion";
+
+import { getArticles } from "../lib/localdata";
+
+import ArticlesPageCard from "@/components/ArticlesPage/ArticlesPageCard";
 import AnimationPage from "@/components/AnimationPage";
 
 const articles = ({ articles }) => {
@@ -34,7 +35,7 @@ const articles = ({ articles }) => {
         className="grid md:grid-cols-2 xl:grid-cols-3 gap-8"
       >
         {articles.map((article) => (
-          <ArticlesCard key={article.slug} article={article} />
+          <ArticlesPageCard key={article.slug} article={article} />
         ))}
       </motion.div>
     </AnimationPage>
