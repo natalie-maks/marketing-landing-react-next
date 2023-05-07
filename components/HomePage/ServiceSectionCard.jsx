@@ -6,8 +6,8 @@ const ServiceSectionCard = ({ service, index }) => {
   const [delay, setDelay] = useState(0);
 
   useEffect(() => {
-    if (window.innerWidth >= 640) setDelay(index * 0.3);
-    if (window.innerWidth >= 1280) setDelay(1.1 + index * 0.3);
+    if (window.innerWidth >= 640) setDelay(index * 0.15);
+    if (window.innerWidth >= 1280) setDelay(0.8 + index * 0.15);
   }, []);
 
   let color;
@@ -38,7 +38,7 @@ const ServiceSectionCard = ({ service, index }) => {
         opacity: 1,
         y: 0,
       }}
-      transition={{ ease: "easeInOut", duration: 0.5, type: "tween", delay: delay }}
+      transition={{ ease: "easeInOut", duration: 0.4, type: "tween", delay: delay }}
       viewport={{ once: true, margin: "-20%" }}
       className={`bg-darkgrey rounded-3xl py-8 px-6 ${service.styles}`}
     >

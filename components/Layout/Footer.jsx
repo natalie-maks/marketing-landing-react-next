@@ -13,7 +13,7 @@ const Footer = () => {
       opacity: 1,
       transition: {
         delay: 0.5,
-        staggerChildren: 0.5,
+        staggerChildren: 0.3,
       },
     },
     exit: {

@@ -10,9 +10,9 @@ const CallToAction = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        duration: 0.7,
-        delayChildren: 0.5,
+        duration: 0.4,
+        staggerChildren: 0.15,
+        delayChildren: 0.3,
       },
     },
   };

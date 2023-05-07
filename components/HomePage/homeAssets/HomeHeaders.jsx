@@ -1,12 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const HomeHeaders = ({ text, h1 }) => {
-  const item = {
-    hidden: { opacity: 0, y: -30 },
-    show: { opacity: 1, y: 0, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
-  };
+import { item } from "../../../assets/motionConst.js";
 
+const HomeHeaders = ({ text, h1 }) => {
   if (h1) {
     return (
       <motion.h1 variants={item} className="text-5xl font-medium">

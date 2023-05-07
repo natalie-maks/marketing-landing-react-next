@@ -18,7 +18,7 @@ const HeroSectionImagesImg = ({ image, index }) => {
         opacity: 1,
         x: 0,
       }}
-      transition={{ ease: "easeInOut", duration: 0.6, type: "tween", delay: delay }}
+      transition={{ ease: "easeInOut", duration: 0.5, type: "tween", delay: delay }}
       viewport={{ once: true, margin: "-10%" }}
       width="640"
       height="960"

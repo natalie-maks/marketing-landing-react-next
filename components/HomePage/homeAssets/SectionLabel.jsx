@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const SectionLabel = ({ text }) => {
   const label = {
     hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { ease: "easeInOut", duration: 1.2 } },
+    show: { opacity: 1, transition: { ease: "easeInOut", duration: 0.6 } },
   };
   return (
     <motion.p

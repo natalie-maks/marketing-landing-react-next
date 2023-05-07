@@ -11,7 +11,7 @@ const articles = ({ articles }) => {
       <motion.h1
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
+        transition={{ duration: 0.3, delay: 0.5, ease: "easeInOut", type: "tween" }}
         viewport={{ once: true }}
         className="text-3xl font-semibold mt-12"
       >
@@ -20,7 +20,7 @@ const articles = ({ articles }) => {
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
+        transition={{ duration: 0.3, delay: 0.65, ease: "easeInOut", type: "tween" }}
         viewport={{ once: true }}
         className="mt-6 mb-12 text-lg"
       >
@@ -30,7 +30,7 @@ const articles = ({ articles }) => {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1 }}
+        transition={{ duration: 0.3, delay: 0.8, ease: "easeInOut", type: "tween" }}
         viewport={{ once: true }}
         className="grid md:grid-cols-2 xl:grid-cols-3 gap-8"
       >

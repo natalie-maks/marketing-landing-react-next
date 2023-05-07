@@ -7,7 +7,7 @@ const AboutSection = () => {
   const [delay, setDelay] = useState(0);
 
   useEffect(() => {
-    if (window.innerWidth >= 1024) setDelay(0.7);
+    if (window.innerWidth >= 1024) setDelay(0.5);
   }, []);
 
   return (

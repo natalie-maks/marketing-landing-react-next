@@ -14,7 +14,7 @@ const AboutSectionTopImages = ({ delay }) => {
     show: {
       opacity: 1,
       x: 0,
-      transition: { ease: "easeInOut", type: "tween", duration: 1, delay: delay },
+      transition: { ease: "easeInOut", type: "tween", duration: 0.5, delay: delay },
     },
   };
 

@@ -19,9 +19,9 @@ const Nav = () => {
       transition: {
         ease: "easeInOut",
         type: "tween",
-        duration: 0.7,
-        staggerChildren: 0.3,
-        delayChildren: 1,
+        duration: 0.5,
+        staggerChildren: 0.15,
+        delayChildren: 0.4,
       },
     },
   };

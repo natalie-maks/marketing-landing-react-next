@@ -6,7 +6,7 @@ const BlogSectionArticle = ({ article, index }) => {
   const [delay, setDelay] = useState(0);
 
   useEffect(() => {
-    if (window.innerWidth >= 640) setDelay(index * 0.3);
+    if (window.innerWidth >= 640) setDelay(index * 0.25);
   }, []);
 
   return (
@@ -16,7 +16,7 @@ const BlogSectionArticle = ({ article, index }) => {
         opacity: 1,
         y: 0,
       }}
-      transition={{ ease: "easeInOut", duration: 0.7, type: "tween", delay: delay }}
+      transition={{ ease: "easeInOut", duration: 0.4, type: "tween", delay: delay }}
       viewport={{ once: true, margin: "-30%" }}
       className="rounded-3xl bg-darkgrey overflow-hidden flex flex-col"
     >

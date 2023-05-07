@@ -10,7 +10,7 @@ const contact = () => {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
+        transition={{ duration: 0.3, delay: 0.5, ease: "easeInOut", type: "tween" }}
         viewport={{ once: true }}
         className="grid lg:grid-cols-2 gap-x-12"
       >

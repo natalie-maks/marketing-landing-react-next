@@ -41,7 +41,7 @@ const AboutSectionBottom = ({ delay }) => {
       <MotionImage
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ ease: "easeInOut", type: "tween", duration: 1, delay: delay }}
+        transition={{ ease: "easeInOut", type: "tween", duration: 0.5, delay: delay }}
         viewport={{ once: true, margin: "-20%" }}
         className="h-[300px] lg:h-auto max-h-[520px] w-full object-cover rounded-full rounded-tl-none"
         width="640"
