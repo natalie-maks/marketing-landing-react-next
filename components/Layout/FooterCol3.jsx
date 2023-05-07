@@ -44,7 +44,7 @@ const FooterCol3 = () => {
         />
         <motion.button
           variants={item}
-          className="text-white py-3 px-6 mb-4 rounded-full bg-blue hover:translate-y-[-2px] shadow-md hover:shadow-darkblue"
+          className="mb-4 py-3 px-6 rounded-full bg-blue text-white hover:translate-y-[-2px] shadow-md hover:shadow-darkblue"
         >
           Subscribe
         </motion.button>

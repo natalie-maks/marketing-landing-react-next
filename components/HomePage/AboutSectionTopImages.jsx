@@ -20,24 +20,24 @@ const AboutSectionTopImages = ({ delay }) => {
 
   return (
     <MotionDiv
-      styles={"w-full max-h-[360px] lg:max-h-none lg:w-1/3 xl:w-1/2 lg:self-stretch flex"}
+      styles={"lg:self-stretch flex w-full lg:w-1/3 xl:w-1/2 max-h-[360px] lg:max-h-none"}
       margin={"-30%"}
     >
       <MotionImage
         variants={imgItemLeft}
-        className="w-3/5 lg:w-full xl:w-3/5 h-auto object-cover rounded-full rounded-tr-none pr-4 xl:pr-8"
+        className="w-3/5 lg:w-full xl:w-3/5 h-auto pr-4 xl:pr-8 rounded-full rounded-tr-none object-cover"
+        src={green2}
+        alt="smiling woman"
         width="612"
         height="853"
-        alt="smiling woman"
-        src={green2}
       />
       <MotionImage
         variants={imgItemLeft}
-        className="lg:hidden xl:flex w-2/5 h-auto lg:h-3/5 lg:self-end object-cover rounded-full rounded-bl-none"
+        className="lg:self-end lg:hidden xl:flex w-2/5 h-auto lg:h-3/5 rounded-full rounded-bl-none object-cover"
+        src={orange2}
+        alt="smiling man"
         width="640"
         height="960"
-        alt="smiling man"
-        src={orange2}
       />
     </MotionDiv>
   );

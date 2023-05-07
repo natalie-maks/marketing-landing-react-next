@@ -32,7 +32,7 @@ const MotionImage = motion(Image);
 
 const AboutSectionBottom = ({ delay }) => {
   return (
-    <div className="flex flex-col lg:flex-row w-full gap-16 mt-40">
+    <div className="flex flex-col lg:flex-row gap-16 w-full mt-40">
       <div className="grid sm:grid-cols-2 gap-6">
         {metrics.map((metric, index) => (
           <AboutSectionMetricsCard key={metric.id} metric={metric} index={index} />
@@ -43,11 +43,11 @@ const AboutSectionBottom = ({ delay }) => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ ease: "easeInOut", type: "tween", duration: 0.5, delay: delay }}
         viewport={{ once: true, margin: "-20%" }}
-        className="h-[300px] lg:h-auto max-h-[520px] w-full object-cover rounded-full rounded-tl-none"
+        className="h-[300px] lg:h-auto max-h-[520px] w-full rounded-full rounded-tl-none object-cover"
+        src={yellow2}
+        alt="smiling man"
         width="640"
         height="960"
-        alt="smiling man"
-        src={yellow2}
       />
     </div>
   );

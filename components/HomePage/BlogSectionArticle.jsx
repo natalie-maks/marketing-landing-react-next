@@ -18,22 +18,23 @@ const BlogSectionArticle = ({ article, index }) => {
       }}
       transition={{ ease: "easeInOut", duration: 0.4, type: "tween", delay: delay }}
       viewport={{ once: true, margin: "-30%" }}
-      className="rounded-3xl bg-darkgrey overflow-hidden flex flex-col"
+      className="flex flex-col rounded-3xl bg-darkgrey overflow-hidden"
     >
       <img
         className="w-full h-52 object-cover"
-        width="1280"
-        height="853"
         src={article.img}
         alt={article.title}
+        width="1280"
+        height="853"
       />
-      <div className="grow p-8 flex flex-col">
+      <div className="grow flex flex-col p-8">
         <time>{article.createdAt}</time>
-        <h3 className="text-lg mt-4 mb-6 md:min-h-[56px]">{article.title}</h3>
+        <h3 className="md:min-h-[56px] mt-4 mb-6 text-lg">{article.title}</h3>
         <p className="grow">{article.excerpt}</p>
         <Link
-          className="text-linkblue hover:text-darkblue mt-4 font-medium block"
+          className="block mt-4 text-linkblue hover:text-darkblue font-medium"
           href={`/articles/${article.slug}`}
+          scroll={false}
         >
           Read now
         </Link>

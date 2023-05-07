@@ -7,7 +7,7 @@ const AnimationPage = ({ children }) => {
       <motion.main
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="container mx-auto px-4 md:px-12 my-20 overflow-x-hidden"
+        className="container mx-auto my-20 px-4 md:px-12 overflow-x-hidden"
       >
         {children}
       </motion.main>

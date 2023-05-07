@@ -17,7 +17,7 @@ const AboutSectionMetricsCard = ({ metric, index }) => {
       }}
       transition={{ ease: "easeInOut", duration: 0.4, type: "tween", delay: delay }}
       viewport={{ once: true, margin: "-20%" }}
-      className="bg-darkgrey rounded-3xl py-10 px-6"
+      className="py-10 px-6 rounded-3xl bg-darkgrey"
     >
       <h3 className="mb-8 text-4xl font-medium">{metric.title}</h3>
       <p>{metric.text}</p>

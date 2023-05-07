@@ -40,15 +40,15 @@ const ServiceSectionCard = ({ service, index }) => {
       }}
       transition={{ ease: "easeInOut", duration: 0.4, type: "tween", delay: delay }}
       viewport={{ once: true, margin: "-20%" }}
-      className={`bg-darkgrey rounded-3xl py-8 px-6 ${service.styles}`}
+      className={`py-8 px-6 rounded-3xl bg-darkgrey ${service.styles}`}
     >
-      <div className={`p-3 w-fit rounded-3xl ${colorShade} shadow-md shadow-black/20`}>
+      <div className={`w-fit p-3 rounded-3xl ${colorShade} shadow-md shadow-black/20`}>
         <Image
+          className={`w-12 h-12 p-2 rounded-full ${color}`}
+          src={service.img}
+          alt={service.title}
           width="48"
           height="48"
-          alt={service.title}
-          className={`w-12 h-12 ${color} rounded-full p-2`}
-          src={service.img}
         />
       </div>
       <h3 className="my-3 font-medium">{service.title}</h3>

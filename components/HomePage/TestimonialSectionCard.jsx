@@ -10,29 +10,29 @@ const TestimonialSectionCard = React.forwardRef(({ testimonial, index }, testimo
   return (
     <article
       ref={testimonialCardRef}
-      className="min-w-[288px] grow px-8 py-12 rounded-3xl  bg-darkgrey overflow-hidden"
+      className="grow min-w-[288px] px-8 py-12 rounded-3xl bg-darkgrey overflow-hidden"
     >
-      <header className="flex space-x-4 items-center">
+      <header className="flex items-center space-x-4">
         <img
-          className={`${corner} w-16 h-16 object-cover rounded-full `}
-          width="200"
-          height="200"
-          alt={testimonial.name}
+          className={`w-16 h-16 rounded-full ${corner} object-cover`}
           src={testimonial.img}
+          alt={testimonial.name}
+          width="64"
+          height="64"
         />
         <div>
-          <p className="text-xl mb-1 text-white">{testimonial.name}</p>
+          <p className="mb-1 text-xl text-white">{testimonial.name}</p>
           <p>{testimonial.company}</p>
         </div>
       </header>
-      <h3 className="text-3xl my-6">"{testimonial.title}"</h3>
+      <h3 className="my-6 text-3xl">"{testimonial.title}"</h3>
       <p>{testimonial.text}</p>
       <Image
-        className="h-6 mt-6 w-auto object-cover rounded-full"
-        width="500"
-        height="100"
-        alt=""
+        className="w-auto h-6 mt-6 rounded-full object-cover"
         src={star}
+        alt="star icon"
+        width="24"
+        height="24"
       />
     </article>
   );

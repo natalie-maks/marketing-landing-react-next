@@ -13,10 +13,10 @@ const MotionDiv = ({ children, margin, styles }) => {
   };
   return (
     <motion.div
-      variants={container}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: margin }}
+      variants={container}
       className={styles}
     >
       {children}

@@ -2,7 +2,7 @@ import React from "react";
 
 const FormLabel = ({ title, forBlock }) => {
   return (
-    <label className="block text-lg text-white pb-2 ml-3" htmlFor={forBlock}>
+    <label className="block ml-3 pb-2 text-lg text-white" htmlFor={forBlock}>
       {title}
     </label>
   );

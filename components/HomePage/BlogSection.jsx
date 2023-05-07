@@ -28,14 +28,14 @@ const BlogSection = ({ articles }) => {
     " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum architect asperiores totam fugiat quaerat explicabo rem magnam incidunt.";
 
   return (
-    <section id="blog" className="pt-28 mt-12">
+    <section id="blog" className="mt-12 pt-28">
       <MotionDiv styles={"flex flex-col lg:flex-row"} margin={"-30%"}>
         <div className="lg:w-2/3">
           <SectionLabel text={"BLOG"} />
           <HomeHeaders text={"Read our articles & news"} />
           <HomeParagraph text={paragraph} />
         </div>
-        <div className="lg:w-1/3 lg:flex mt-8 items-end justify-end">
+        <div className="lg:flex lg:items-end lg:justify-end lg:w-1/3 mt-8">
           <motion.div variants={item}>
             <Button label={"All posts"} link={"articles"} />
           </motion.div>

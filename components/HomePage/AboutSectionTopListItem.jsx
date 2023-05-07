@@ -9,9 +9,11 @@ const AboutSectionTopListItem = ({ listItem }) => {
   return (
     <motion.li variants={item} className="flex items-center">
       <Image
-        className="w-10 h-10 bg-grey rounded-full p-1 block mr-4"
-        alt="check sign"
+        className="block w-10 h-10 mr-4 p-1 rounded-full bg-grey"
         src={check}
+        alt="check sign"
+        width="40"
+        height="40"
       />
       <span>{listItem}</span>
     </motion.li>

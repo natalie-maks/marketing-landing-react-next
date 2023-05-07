@@ -44,30 +44,30 @@ const Article = ({ article, recomendedArticles }) => {
         viewport={{ once: true }}
       >
         <img
-          className="w-full h-64 mt-10 mb-4 object-cover rounded-3xl"
-          width="1280"
-          height="853"
+          className="w-full h-64 mt-10 mb-4 rounded-3xl object-cover"
           src={article.img}
           alt={article.title}
+          width="1280"
+          height="853"
         />
 
         <time>{article.createdAt}</time>
-        <h1 className="text-3xl font-semibold mt-8 mb-6">{article.title}</h1>
+        <h1 className="mt-8 mb-6 text-3xl font-semibold">{article.title}</h1>
         <p>{article.excerpt}</p>
 
         {article.body.map((item, i) => {
           return formateBody(item, i);
         })}
 
-        <h2 className="text-3xl font-semibold mt-12 mb-6">See also</h2>
+        <h2 className="mt-12 mb-6 text-3xl font-semibold">See also</h2>
         {recomendedArticles.map((article, index) => {
           for (let i = 0; index < 3; i++) {
             return (
               <Link
-                className="block text-xl my-4 text-white hover:text-darkblue"
+                className="block my-4 text-xl text-white hover:text-darkblue"
                 href={`/articles/${article.slug}`}
-                key={article.slug}
                 scroll={false}
+                key={article.slug}
               >
                 {article.title}
               </Link>

@@ -20,11 +20,11 @@ const HeroSectionImagesImg = ({ image, index }) => {
       }}
       transition={{ ease: "easeInOut", duration: 0.5, type: "tween", delay: delay }}
       viewport={{ once: true, margin: "-10%" }}
+      className={`h-full w-full rounded-full object-cover ${image.styles}`}
+      src={image.color}
+      alt={image.alt}
       width="640"
       height="960"
-      alt={image.alt}
-      className={`h-full w-full object-cover rounded-full ${image.styles} `}
-      src={image.color}
     />
   );
 };

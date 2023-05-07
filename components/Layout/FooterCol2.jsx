@@ -9,7 +9,7 @@ const FooterCol2 = () => {
       <motion.h3 variants={item} className="text-xl font-medium">
         Pages
       </motion.h3>
-      <ul className="pt-6 grid grid-cols-2 gap-3">
+      <ul className="grid grid-cols-2 gap-3 pt-6">
         <motion.li variants={item}>
           <Link className="hover:text-white transition-all" href="/">
             Home

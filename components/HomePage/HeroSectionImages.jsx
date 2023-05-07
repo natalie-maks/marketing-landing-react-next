@@ -34,7 +34,7 @@ const images = [
 
 const HeroSectionImages = () => {
   return (
-    <div className="lg:w-2/5 max-h-[460px] 2xl:max-h-[660px] grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-none grid-rows-2 sm:grid-rows-none lg:grid-rows-3 lg:gap-x-12 gap-6">
+    <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-none grid-rows-2 sm:grid-rows-none lg:grid-rows-3 gap-6 lg:gap-x-12 lg:w-2/5 max-h-[460px] 2xl:max-h-[660px]">
       {images.map((image, index) => (
         <HeroSectionImagesImg key={image.id} image={image} index={index} />
       ))}

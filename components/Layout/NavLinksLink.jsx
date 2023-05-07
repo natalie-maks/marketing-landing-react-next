@@ -24,9 +24,10 @@ const NavLinksLink = ({ link, changeClicked, router }) => {
       <motion.li
         variants={list}
         onClick={() => changeClicked()}
-        className={`${link.styles} hover:text-darkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400`}
+        className={`${link.styles} flex items-center h-full px-4`}
       >
         <Link
+          className="hover:text-darkblue transition-colors"
           href={link.target}
           scroll={false}
           onClick={() => {

@@ -4,7 +4,7 @@ const FormInput = React.forwardRef(({ type, id, placeholder }, inputRef) => {
   return (
     <input
       ref={inputRef}
-      className="py-3 px-6 mr-3 mb-4 w-full bg-transparent border-[1px] border-lightgrey rounded-3xl"
+      className="w-full mr-3 mb-4 py-3 px-6 rounded-3xl border-[1px] border-lightgrey bg-transparent"
       type={type}
       id={id}
       placeholder={placeholder}

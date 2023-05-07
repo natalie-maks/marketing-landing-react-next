@@ -42,7 +42,7 @@ const services = [
 
 const ServiceSectionCards = () => {
   return (
-    <div className="xl:w-1/2 grid sm:grid-rows-11 gap-6">
+    <div className="grid sm:grid-rows-11 gap-6 xl:w-1/2">
       {services.map((service, index) => (
         <ServiceSectionCard key={service.id} service={service} index={index} />
       ))}

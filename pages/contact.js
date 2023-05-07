@@ -32,7 +32,7 @@ const contact = () => {
         className="grid lg:grid-cols-2 gap-x-12"
       >
         <div className="self-center">
-          <h1 className="text-3xl font-semibold mt-12 mb-6">Leave us a message</h1>
+          <h1 className="mt-12 mb-6 text-3xl font-semibold">Leave us a message</h1>
           <p className="text-xl">
             Tell us your problem and we will get back with solution shortly!
           </p>
@@ -44,13 +44,13 @@ const contact = () => {
           <FormInput type={"email"} id={"email"} placeholder={"johm@example.com"} />
           <FormLabel title={"Message"} forBlock={"message"} />
           <textarea
+            className="w-full py-3 px-6 mr-3 bg-transparent border-[1px] border-lightgrey rounded-3xl"
             id="message"
             placeholder="Your message here"
             rows="5"
             required
-            className="py-3 px-6 mr-3 w-full bg-transparent border-[1px] border-lightgrey rounded-3xl"
           />
-          <button className="mt-4 min-w-[200px] text-white py-3 px-6 mb-4 rounded-full bg-blue hover:translate-y-[-2px] shadow-md hover:shadow-darkblue">
+          <button className="min-w-[200px] mt-4 py-3 px-6 rounded-full bg-blue text-white hover:translate-y-[-2px] shadow-md hover:shadow-darkblue">
             Send
           </button>
         </form>

@@ -25,11 +25,11 @@ const FooterCol1 = () => {
     <motion.div variants={footerColCont}>
       <motion.div variants={item}>
         <Image
+          className="w-fit h-10 object-scale-down"
           src={logo}
           alt="logo"
           width="250"
           height="80"
-          className="h-10  w-fit object-scale-down"
         />
       </motion.div>
       <motion.p variants={item} className="my-8">

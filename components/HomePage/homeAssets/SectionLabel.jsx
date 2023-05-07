@@ -9,7 +9,7 @@ const SectionLabel = ({ text }) => {
   return (
     <motion.p
       variants={label}
-      className="py-2 px-4 rounded-2xl text-lightgrey border-[1px] border-lightgrey w-fit mb-10"
+      className="w-fit mb-10 py-2 px-4 rounded-2xl border-[1px] border-lightgrey text-lightgrey"
     >
       {text}
     </motion.p>

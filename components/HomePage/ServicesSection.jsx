@@ -17,7 +17,7 @@ const ServicesSection = () => {
   return (
     <section
       id="services"
-      className="flex flex-col xl:flex-row items-center gap-12 pt-28 mt-12 mb-40"
+      className="flex flex-col xl:flex-row items-center gap-12 mt-12 mb-40 pt-28"
     >
       <MotionDiv styles={"xl:w-1/2"} margin={"-30%"}>
         <SectionLabel text={"SERVICES"} />

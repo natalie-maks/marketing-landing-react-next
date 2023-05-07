@@ -23,20 +23,20 @@ const CallToAction = () => {
       whileInView="show"
       variants={container}
       viewport={{ once: true, margin: "-30%" }}
-      className="mt-40 bg-darkgrey py-12 px-12 rounded-3xl flex flex-col lg:flex-row items-center justify-around space-y-8 lg:space-y-0"
+      className="flex flex-col lg:flex-row items-center justify-around space-y-8 lg:space-y-0 mt-40 py-12 px-12 rounded-3xl bg-darkgrey"
     >
-      <div className="lg:w-1/2 max-w-[440px] flex flex-col">
+      <div className="flex flex-col lg:w-1/2 max-w-[440px]">
         <motion.h2
           variants={fadeItem}
-          className="text-4xl text-center pb-6 font-medium leading-tight"
+          className="pb-6 text-4xl text-center font-medium leading-tight"
         >
           Ready to start scaling your business now?
         </motion.h2>
-        <motion.p variants={fadeItem} className="text-center text-lg">
+        <motion.p variants={fadeItem} className="text-lg text-center">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis !
         </motion.p>
       </div>
-      <div className="lg:w-1/2 max-w-[440px] flex flex-wrap justify-center gap-6">
+      <div className="flex flex-wrap justify-center gap-6 lg:w-1/2 max-w-[440px]">
         <motion.div variants={item}>
           <Button label={"Our services"} link={"/#services"} scroll={true} />
         </motion.div>

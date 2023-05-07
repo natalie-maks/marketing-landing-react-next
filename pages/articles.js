@@ -13,7 +13,7 @@ const articles = ({ articles }) => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.3, delay: 0.5, ease: "easeInOut", type: "tween" }}
         viewport={{ once: true }}
-        className="text-3xl font-semibold mt-12"
+        className="mt-12 text-3xl font-semibold"
       >
         All about Marketing, SEO etc.
       </motion.h1>

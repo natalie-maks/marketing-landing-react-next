@@ -51,18 +51,18 @@ const TestimonialsSection = () => {
           <HomeHeaders text={"See what our clients say"} />
           <HomeParagraph text={paragraph} />
         </div>
-        <div className="lg:w-1/3 lg:flex mt-8 items-end justify-end">
+        <div className="lg:w-1/3 lg:flex lg:items-end lg:justify-end mt-8">
           <motion.div variants={item}>
             <Button label={"Get in touch"} link={"/contact"} />
           </motion.div>
         </div>
       </MotionDiv>
 
-      <MotionDiv styles={"flex space-x-8 overflow-x-auto pt-12"} margin={"-40%"}>
+      <MotionDiv styles={"flex space-x-8 pt-12 overflow-x-auto"} margin={"-40%"}>
         {testimonials.map((testimonial, index) => (
           <MotionTestimonialSectionCard
-            variants={item}
             key={testimonial.id}
+            variants={item}
             testimonial={testimonial}
             index={index}
           />

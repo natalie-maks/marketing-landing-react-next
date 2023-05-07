@@ -11,7 +11,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about" className="pt-28 mt-12 lg:pt-20 lg:mt-20">
+    <section id="about" className="mt-12 lg:mt-20 pt-28 lg:pt-20">
       <AboutSectionTop delay={delay} />
       <AboutSectionBottom delay={delay} />
     </section>

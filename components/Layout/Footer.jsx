@@ -31,7 +31,7 @@ const Footer = () => {
       exit="exit"
       variants={footer}
       viewport={{ once: true, margin: "-20%" }}
-      className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-16 sm:gap-12 lg:gap-8 xl:gap-12 py-20 px-4 md:px-12"
+      className="container grid sm:grid-cols-2 lg:grid-cols-3 gap-16 sm:gap-12 lg:gap-8 xl:gap-12 mx-auto py-20 px-4 md:px-12"
     >
       <FooterCol1 />
       <FooterCol2 />

@@ -23,11 +23,11 @@ const NavLogo = ({ router }) => {
         aria-label="Main page"
       >
         <Image
+          className="h-12 w-28 object-scale-down"
           src={logo}
           alt="logo"
-          width="100"
-          height="50"
-          className="h-12 w-28 object-scale-down"
+          width="250"
+          height="80"
         />
       </Link>
     </motion.div>

@@ -35,9 +35,9 @@ const Nav = () => {
       initial="hidden"
       animate="show"
       variants={navbar}
-      className="fixed top-0 z-10 h-20 w-full bg-darkgrey shadow-md shadow-bggrey"
+      className="fixed top-0 z-10 w-full h-20 bg-darkgrey shadow-md shadow-bggrey"
     >
-      <div className="container flex items-center justify-between h-full px-4 mx-auto">
+      <div className="container flex items-center justify-between h-full mx-auto px-4">
         <NavLogo router={router} />
         <NavLinks router={router} clicked={clicked} changeClicked={changeClicked} />
         <NavMenuButton changeClicked={changeClicked} />
