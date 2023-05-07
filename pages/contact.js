@@ -1,10 +1,27 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 import AnimationPage from "@/components/AnimationPage";
+import MessageDialog from "@/components/Dialogs/MessageDialog";
 import FormLabel from "@/components/UI/FormLabel";
 import FormInput from "@/components/UI/FormInput";
 
 const contact = () => {
+  const [successMessage, setSuccessMessage] = useState(false);
+
+  const clearMessage = () => {
+    setSuccessMessage(false);
+  };
+
+  const handleMessageSubmit = (e) => {
+    e.preventDefault();
+    setSuccessMessage(true);
+    setTimeout(() => {
+      clearMessage();
+    }, 3000);
+    e.target.reset();
+  };
+
   return (
     <AnimationPage>
       <motion.div
@@ -20,7 +37,7 @@ const contact = () => {
             Tell us your problem and we will get back with solution shortly!
           </p>
         </div>
-        <form className="max-w-[600px] mt-12">
+        <form onSubmit={handleMessageSubmit} className="max-w-[600px] mt-12">
           <FormLabel title={"Name"} forBlock={"name"} />
           <FormInput type={"text"} id={"name"} placeholder={"John Doe"} />
           <FormLabel title={"Email"} forBlock={"email"} />
@@ -30,10 +47,15 @@ const contact = () => {
             id="message"
             placeholder="Your message here"
             rows="5"
+            required
             className="py-3 px-6 mr-3 w-full bg-transparent border-[1px] border-lightgrey rounded-3xl"
           />
+          <button className="mt-4 min-w-[200px] text-white py-3 px-6 mb-4 rounded-full bg-blue hover:translate-y-[-2px] shadow-md hover:shadow-darkblue">
+            Send
+          </button>
         </form>
       </motion.div>
+      {successMessage && <MessageDialog clearMessage={clearMessage} />}
     </AnimationPage>
   );
 };

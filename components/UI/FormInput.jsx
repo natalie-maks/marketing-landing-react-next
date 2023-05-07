@@ -8,6 +8,7 @@ const FormInput = React.forwardRef(({ type, id, placeholder }, inputRef) => {
       type={type}
       id={id}
       placeholder={placeholder}
+      autoComplete="off"
       required
     />
   );
