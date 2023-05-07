@@ -12,10 +12,15 @@ const contact = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.7 }}
         viewport={{ once: true }}
-        className="max-w-[600px] mx-auto"
+        className="grid lg:grid-cols-2 gap-x-12"
       >
-        <h1 className="text-2xl font-semibold mt-12 mb-6 ml-3">Leave us a message</h1>
-        <form>
+        <div className="self-center">
+          <h1 className="text-3xl font-semibold mt-12 mb-6">Leave us a message</h1>
+          <p className="text-xl">
+            Tell us your problem and we will get back with solution shortly!
+          </p>
+        </div>
+        <form className="max-w-[600px] mt-12">
           <FormLabel title={"Name"} forBlock={"name"} />
           <FormInput type={"text"} id={"name"} placeholder={"John Doe"} />
           <FormLabel title={"Email"} forBlock={"email"} />
