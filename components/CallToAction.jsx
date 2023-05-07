@@ -26,7 +26,7 @@ const CallToAction = ({ item }) => {
       whileInView="show"
       variants={container}
       viewport={{ once: true, margin: "-30%" }}
-      className="mt-40  bg-darkgrey py-12 px-12 rounded-3xl flex flex-col lg:flex-row items-center justify-around space-y-8 lg:space-y-0"
+      className="mt-40 bg-darkgrey py-12 px-12 rounded-3xl flex flex-col lg:flex-row items-center justify-around space-y-8 lg:space-y-0"
     >
       <div className="lg:w-1/2 max-w-[440px] flex flex-col">
         <motion.h2

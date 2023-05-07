@@ -5,6 +5,7 @@ import Testimonials from "@/components/Testimonials";
 import Blog from "@/components/Blog";
 import CallToAction from "@/components/CallToAction";
 import { getArticles } from "../lib/localdata";
+import AnimationPage from "@/components/AnimationPage";
 
 export default function Home({ articles }) {
   const container = {
@@ -28,14 +29,14 @@ export default function Home({ articles }) {
   };
 
   return (
-    <>
+    <AnimationPage>
       <Hero container={container} item={item} />
       <About container={container} item={item} label={label} />
       <Services container={container} item={item} label={label} />
       <Testimonials container={container} item={item} label={label} />
       <Blog articles={articles} container={container} item={item} label={label} />
       <CallToAction item={item} />
-    </>
+    </AnimationPage>
   );
 }
 

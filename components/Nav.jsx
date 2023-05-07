@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -8,6 +9,8 @@ import Button from "./UI/Button";
 
 const Nav = () => {
   const [clicked, setClicked] = useState(false);
+
+  const router = useRouter();
 
   const navbar = {
     hidden: { opacity: 0, y: `-100%` },
@@ -52,10 +55,12 @@ const Nav = () => {
           <Link
             href="/"
             onClick={() => {
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
+              if (router.route === "/") {
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }
             }}
             scroll={false}
             aria-label="Main page"
@@ -84,10 +89,12 @@ const Nav = () => {
               href="/"
               scroll={false}
               onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-                });
+                if (router.route === "/") {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                  });
+                }
               }}
             >
               Home
@@ -116,7 +123,7 @@ const Nav = () => {
             onClick={() => setClicked(false)}
             className="hover:text-darkblue transition-colors h-full flex items-center border-b-4 px-4 border-transparent hover:border-yellow-400"
           >
-            <Link href="/#blog" scroll={false}>
+            <Link href={router.route === "/" ? "/#blog" : "/articles"} scroll={false}>
               Blog
             </Link>
           </motion.li>

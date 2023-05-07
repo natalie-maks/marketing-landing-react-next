@@ -12,7 +12,7 @@ const ArticlesCard = ({ article }) => {
         alt={article.title}
       />
       <div className="grow p-8 flex flex-col">
-        <Link className="font-medium block" href={`/articles/${article.slug}`}>
+        <Link className="font-medium block" href={`/articles/${article.slug}`} scroll={false}>
           <h3 className="text-lg hover:text-darkblue md:min-h-[56px]">{article.title}</h3>
         </Link>
         <p className="my-4 grow">{article.excerpt}</p>

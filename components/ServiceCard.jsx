@@ -5,6 +5,27 @@ import { motion } from "framer-motion";
 const ServiceCard = ({ service, index }) => {
   const [delay, setDelay] = useState(0);
 
+  let color;
+  let colorShade;
+
+  switch (service.color) {
+    case "green":
+      color = "bg-green";
+      colorShade = "bg-green/5";
+      break;
+    case "orange":
+      color = "bg-orange";
+      colorShade = "bg-orange/5";
+      break;
+    case "yellow":
+      color = "bg-yellow";
+      colorShade = "bg-yellow/5";
+      break;
+    default:
+      color = "bg-blue";
+      colorShade = "bg-blue/5";
+  }
+
   useEffect(() => {
     if (window.innerWidth >= 640) setDelay(index * 0.3);
     if (window.innerWidth >= 1280) setDelay(1.1 + index * 0.3);
@@ -21,12 +42,12 @@ const ServiceCard = ({ service, index }) => {
       viewport={{ once: true, margin: "-20%" }}
       className={`bg-darkgrey rounded-3xl py-8 px-6 ${service.styles}`}
     >
-      <div className={`p-3 w-fit rounded-3xl bg-${service.color}/5 shadow-md shadow-black/20`}>
+      <div className={`p-3 w-fit rounded-3xl ${colorShade} shadow-md shadow-black/20`}>
         <Image
           width="48"
           height="48"
           alt={service.title}
-          className={`w-12 h-12 bg-${service.color} rounded-full p-2`}
+          className={`w-12 h-12 ${color} rounded-full p-2`}
           src={service.img}
         />
       </div>

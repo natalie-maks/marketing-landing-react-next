@@ -12,11 +12,20 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   const footer = {
-    hidden: { opacity: 0 },
+    hidden: {
+      opacity: 0,
+    },
     show: {
       opacity: 1,
       transition: {
+        delay: 0.5,
         staggerChildren: 0.5,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        duration: 0.3,
       },
     },
   };
@@ -44,6 +53,7 @@ const Footer = () => {
       whileInView="show"
       viewport={{ once: true, margin: "-20%" }}
       variants={footer}
+      exit="exit"
       className="container mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-16 sm:gap-12 lg:gap-8 xl:gap-12 py-20 px-4 md:px-12"
     >
       <motion.div variants={container}>

@@ -1,17 +1,25 @@
 import React from "react";
 import { getArticles } from "../../lib/localdata";
-
+import AnimationPage from "@/components/AnimationPage";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import Button from "@/components/UI/Button";
 
-const Article = ({ article }) => {
+const Article = ({ article, recomendedArticles }) => {
   function formateBody(item, i) {
     for (const property in item) {
       switch (property) {
         case "h2":
           return (
-            <h2 key={i} className="text-lg font-semibold my-4">
+            <h2 key={i} className="text-2xl font-semibold my-4">
               {item[property]}
             </h2>
+          );
+        case "h3":
+          return (
+            <h3 key={i} className="text-xl font-semibold my-4">
+              {item[property]}
+            </h3>
           );
         case "p":
           return (
@@ -27,27 +35,49 @@ const Article = ({ article }) => {
   }
 
   return (
-    <main className="container mx-auto px-4 md:px-12 mt-20 overflow-x-hidden">
-      <img
-        className="w-full h-64 mt-10 object-cover rounded-3xl"
-        width="1280"
-        height="853"
-        src={article.img}
-        alt={article.title}
-      />
+    <AnimationPage>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        viewport={{ once: true }}
+      >
+        <img
+          className="w-full h-64 mt-10 mb-4 object-cover rounded-3xl"
+          width="1280"
+          height="853"
+          src={article.img}
+          alt={article.title}
+        />
 
-      <time>{article.createdAt}</time>
-      <h1 className="text-3xl mt-4 mb-6">{article.title}</h1>
-      <p>{article.excerpt}</p>
+        <time>{article.createdAt}</time>
+        <h1 className="text-3xl font-semibold mt-8 mb-6">{article.title}</h1>
+        <p>{article.excerpt}</p>
 
-      {article.body.map((item, i) => {
-        return formateBody(item, i);
-      })}
+        {article.body.map((item, i) => {
+          return formateBody(item, i);
+        })}
 
-      <Link className="text-linkblue hover:text-darkblue mt-4 font-medium block" href={`/articles`}>
-        Go to articles
-      </Link>
-    </main>
+        <h2 className="text-3xl font-semibold mt-12 mb-6">See also</h2>
+        {recomendedArticles.map((article, index) => {
+          for (let i = 0; index < 3; i++) {
+            return (
+              <Link
+                className="block text-xl my-4 text-white hover:text-darkblue"
+                href={`/articles/${article.slug}`}
+                key={article.slug}
+                scroll={false}
+              >
+                {article.title}
+              </Link>
+            );
+          }
+        })}
+        <div className="mt-12 mb-2">
+          <Button label={"Go to articles"} link={"/articles"} />
+        </div>
+      </motion.div>
+    </AnimationPage>
   );
 };
 
@@ -58,8 +88,10 @@ export async function getStaticProps({ params }) {
 
   let article = articles.find((element) => element.slug == params.slug);
 
+  let recomendedArticles = articles.filter((element) => element.slug !== params.slug);
+
   return {
-    props: { article },
+    props: { article, recomendedArticles },
   };
 }
 
