@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import Button from "../UI/Button";
 
-import { item } from "../../assets/motionConst.js";
+import { item, fadeItem } from "../../assets/motionConst.js";
 
 const CallToAction = () => {
   const container = {
@@ -15,11 +15,6 @@ const CallToAction = () => {
         delayChildren: 0.5,
       },
     },
-  };
-
-  const fadeItem = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { ease: "easeInOut", duration: 0.7, type: "tween" } },
   };
 
   return (

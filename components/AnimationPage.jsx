@@ -1,4 +1,4 @@
-import Footer from "./Footer";
+import Footer from "./Layout/Footer";
 import React from "react";
 import { motion } from "framer-motion";
 const AnimationPage = ({ children }) => {
