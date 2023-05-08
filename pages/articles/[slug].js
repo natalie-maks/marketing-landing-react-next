@@ -9,9 +9,6 @@ import AnimationPage from "@/components/AnimationPage";
 import Button from "@/components/UI/Button";
 
 const Article = ({ article, recomendedArticles }) => {
-  console.log(article);
-  console.log(recomendedArticles);
-
   function formateBody(item, i) {
     for (const property in item) {
       switch (property) {
