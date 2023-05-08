@@ -1,3 +1,5 @@
+import React from "react";
+
 import AboutSectionTopImages from "./AboutSectionTopImages";
 import AboutSectionTopList from "./AboutSectionTopList";
 

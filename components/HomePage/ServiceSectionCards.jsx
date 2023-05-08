@@ -1,3 +1,5 @@
+import React from "react";
+
 import ServiceSectionCard from "./ServiceSectionCard";
 
 import social from "@/assets/social.svg";

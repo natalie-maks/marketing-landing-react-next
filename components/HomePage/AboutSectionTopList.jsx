@@ -1,3 +1,5 @@
+import React from "react";
+
 import AboutSectionTopListItem from "./AboutSectionTopListItem";
 
 const list = ["All Digital Tools", "Best Solutions", "Fastest Results"];

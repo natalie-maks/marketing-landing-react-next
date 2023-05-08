@@ -1,3 +1,5 @@
+import React from "react";
+
 import HeroSectionImagesImg from "./HeroSectionImagesImg";
 
 import green from "@/assets/green.png";
