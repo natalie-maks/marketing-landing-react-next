@@ -26,6 +26,9 @@ module.exports = {
       gridTemplateRows: {
         11: "repeat(11, minmax(0, 1fr))",
       },
+      minHeight: {
+        fullScreen: "calc(100vh - 80px)",
+      },
     },
   },
   plugins: [],

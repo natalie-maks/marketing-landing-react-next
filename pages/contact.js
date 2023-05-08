@@ -34,15 +34,15 @@ const contact = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.3, delay: 0.5, ease: "easeInOut", type: "tween" }}
         viewport={{ once: true }}
-        className="grid lg:grid-cols-2 gap-x-12"
+        className="grid lg:grid-cols-2 gap-x-12 items-center min-h-fullScreen"
       >
-        <div className="self-center">
-          <h1 className="mt-12 mb-6 text-3xl font-semibold">Leave us a message</h1>
+        <div>
+          <h1 className="mb-6 text-3xl font-semibold">Leave us a message</h1>
           <p className="text-xl">
             Tell us your problem and we will get back with solution shortly!
           </p>
         </div>
-        <form onSubmit={handleMessageSubmit} className="max-w-[600px] mt-12">
+        <form onSubmit={handleMessageSubmit} className="max-w-[600px]">
           <FormLabel title={"Name"} forBlock={"name"} />
           <FormInput type={"text"} id={"name"} placeholder={"John Doe"} />
           <FormLabel title={"Email"} forBlock={"email"} />
