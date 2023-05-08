@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import { getArticles } from "../../lib/localdata";
 
+import Meta from "@/components/Layout/Meta";
 import AnimationPage from "@/components/AnimationPage";
 import Button from "@/components/UI/Button";
 
@@ -37,6 +38,7 @@ const Article = ({ article, recomendedArticles }) => {
 
   return (
     <AnimationPage>
+      <Meta title={`${article.title} - WeGrow`} description={article.excerpt} />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

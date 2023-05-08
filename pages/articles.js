@@ -2,12 +2,19 @@ import { motion } from "framer-motion";
 
 import { getArticles } from "../lib/localdata";
 
+import Meta from "@/components/Layout/Meta";
 import ArticlesPageCard from "@/components/ArticlesPage/ArticlesPageCard";
 import AnimationPage from "@/components/AnimationPage";
 
 const articles = ({ articles }) => {
   return (
     <AnimationPage>
+      <Meta
+        title={"All about marketing, SEO and content creation - WeGrow"}
+        description={
+          "The most interestng and articles on latest strategies, insights & tools for digital marketers. Follow our marketing blog to stay up to date on digital trends!"
+        }
+      />
       <motion.h1
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

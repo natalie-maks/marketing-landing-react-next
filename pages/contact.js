@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import AnimationPage from "@/components/AnimationPage";
 import MessageDialog from "@/components/Dialogs/MessageDialog";
+import Meta from "@/components/Layout/Meta";
 import FormLabel from "@/components/UI/FormLabel";
 import FormInput from "@/components/UI/FormInput";
 
@@ -24,6 +25,10 @@ const contact = () => {
 
   return (
     <AnimationPage>
+      <Meta
+        title={"WeGrow - Contact us"}
+        description={"WeGrow is a marketing agency that helps brands scale with content marketing"}
+      />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
