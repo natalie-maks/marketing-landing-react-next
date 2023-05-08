@@ -7,7 +7,7 @@ import Meta from "@/components/Layout/Meta";
 import FormLabel from "@/components/UI/FormLabel";
 import FormInput from "@/components/UI/FormInput";
 
-const contact = () => {
+const Contact = () => {
   const [successMessage, setSuccessMessage] = useState(false);
 
   const clearMessage = () => {
@@ -65,4 +65,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;

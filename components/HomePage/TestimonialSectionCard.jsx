@@ -13,7 +13,7 @@ const TestimonialSectionCard = React.forwardRef(({ testimonial, index }, testimo
       className="flex-1 min-w-[288px] px-8 py-12 rounded-3xl bg-darkgrey overflow-hidden"
     >
       <header className="flex items-center space-x-4">
-        <img
+        <Image
           className={`w-16 h-16 rounded-full ${corner} object-cover`}
           src={testimonial.img}
           alt={testimonial.name}
@@ -25,7 +25,11 @@ const TestimonialSectionCard = React.forwardRef(({ testimonial, index }, testimo
           <p>{testimonial.company}</p>
         </div>
       </header>
-      <h3 className="h-[72px] my-6 text-3xl">"{testimonial.title}"</h3>
+      <h3 className="h-[72px] my-6 text-3xl">
+        {`"`}
+        {testimonial.title}
+        {`"`}
+      </h3>
       <p className="self-stretch">{testimonial.text}</p>
       <Image
         className="w-auto h-6 mt-6 rounded-full object-cover"
@@ -37,5 +41,7 @@ const TestimonialSectionCard = React.forwardRef(({ testimonial, index }, testimo
     </article>
   );
 });
+
+TestimonialSectionCard.displayName = "TestimonialSectionCard";
 
 export default TestimonialSectionCard;
