@@ -31,7 +31,7 @@ const Articles = ({ articles }) => {
         className="mt-6 mb-12 text-lg"
       >
         The most interestng and articles on latest strategies, insights & tools for digital
-        marketers. Follow our marketing blog to stay up to date on digital trends!"
+        marketers. Follow our marketing blog to stay up to date on digital trends!
       </motion.p>
       <motion.div
         initial={{ opacity: 0 }}
