@@ -33,7 +33,7 @@ const BlogSectionArticle = ({ article, index }) => {
         <p className="grow">{article.excerpt}</p>
         <Link
           className="block mt-4 text-linkblue hover:text-darkblue font-medium"
-          href={`/articles/${article.slug}`}
+          href={`/article/${article.slug}`}
           scroll={false}
         >
           Read now

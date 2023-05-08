@@ -68,7 +68,7 @@ const Article = ({ article, recomendedArticles }) => {
             return (
               <Link
                 className="block my-4 text-xl text-white hover:text-darkblue"
-                href={`/articles/${article.slug}`}
+                href={`/article/${article.slug}`}
                 scroll={false}
                 key={article.slug}
               >
@@ -106,7 +106,7 @@ export async function getStaticPaths() {
     paths: articles.map((article) => {
       let slug = article.slug;
 
-      return `/articles/${slug}`;
+      return `/article/${slug}`;
     }),
     fallback: true,
   };
