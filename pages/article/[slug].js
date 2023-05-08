@@ -108,6 +108,6 @@ export async function getStaticPaths() {
 
       return `/article/${slug}`;
     }),
-    fallback: true,
+    fallback: false,
   };
 }
