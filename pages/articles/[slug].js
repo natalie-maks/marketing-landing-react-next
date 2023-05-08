@@ -9,6 +9,9 @@ import AnimationPage from "@/components/AnimationPage";
 import Button from "@/components/UI/Button";
 
 const Article = ({ article, recomendedArticles }) => {
+  console.log(article);
+  console.log(recomendedArticles);
+
   function formateBody(item, i) {
     for (const property in item) {
       switch (property) {
@@ -39,7 +42,7 @@ const Article = ({ article, recomendedArticles }) => {
 
   return (
     <AnimationPage>
-      <Meta title={`${article.title} - WeGrow`} description={article.excerpt} />
+      <Meta title={article.title} description={article.excerpt} />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
