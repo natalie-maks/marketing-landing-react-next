@@ -33,8 +33,8 @@ const FooterCol1 = () => {
         />
       </motion.div>
       <motion.p variants={item} className="my-8">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil
-        odio perspiciatis nisi veritatis eius consequuntur!
+        WeGrow is a marketing agency that helps brands scale with digital tools including social
+        media marketing, paid advertising, email marketing, SEO optimization!
       </motion.p>
       {links.map((link) => (
         <FooterIconLink key={link.target} link={link} />

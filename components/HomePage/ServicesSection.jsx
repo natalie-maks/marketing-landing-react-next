@@ -12,7 +12,7 @@ import { item } from "../../assets/motionConst.js";
 
 const ServicesSection = () => {
   const paragraph =
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil odio perspiciatis nisi veritatis eius consequuntur!";
+    "We can help you gain new clients, boost your website in search results, communicate with your customers. All the wonderful things of the digital world!";
 
   return (
     <section
@@ -23,7 +23,7 @@ const ServicesSection = () => {
         <SectionLabel text={"SERVICES"} />
         <HomeHeaders text={"Services we offer"} />
         <HomeParagraph text={paragraph} />
-        <motion.div variants={item}>
+        <motion.div variants={item} className="mt-8">
           <Button label={"Contact us"} link={"/contact"} />
         </motion.div>
       </MotionDiv>

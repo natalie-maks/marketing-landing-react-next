@@ -30,7 +30,7 @@ const FooterCol3 = () => {
         Subscribe to our newsletter
       </motion.h3>
       <motion.p variants={item} className="my-6">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit
+        Receive best new articles on digital marketing, social media content, SEO, etc.
       </motion.p>
       <form
         onSubmit={handleEmailSubmit}

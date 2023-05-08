@@ -33,15 +33,15 @@ const CallToAction = () => {
           Ready to start scaling your business now?
         </motion.h2>
         <motion.p variants={fadeItem} className="text-lg text-center">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis !
+          Get in touch and we will help to grow your business in the shortest time possible!
         </motion.p>
       </div>
       <div className="flex flex-wrap justify-center gap-6 lg:w-1/2 max-w-[440px]">
         <motion.div variants={item}>
-          <Button label={"Our services"} link={"/#services"} scroll={true} />
+          <Button label={"Contact us"} link={"/contact"} scroll={true} />
         </motion.div>
         <motion.div variants={item}>
-          <Button label={"Contact us"} grey={true} link={"/contact"} />
+          <Button label={"Our services"} grey={true} link={"/#services"} />
         </motion.div>
       </div>
     </motion.div>

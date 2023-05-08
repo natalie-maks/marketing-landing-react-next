@@ -10,7 +10,7 @@ const TestimonialSectionCard = React.forwardRef(({ testimonial, index }, testimo
   return (
     <article
       ref={testimonialCardRef}
-      className="grow min-w-[288px] px-8 py-12 rounded-3xl bg-darkgrey overflow-hidden"
+      className="flex-1 min-w-[288px] px-8 py-12 rounded-3xl bg-darkgrey overflow-hidden"
     >
       <header className="flex items-center space-x-4">
         <img
@@ -25,8 +25,8 @@ const TestimonialSectionCard = React.forwardRef(({ testimonial, index }, testimo
           <p>{testimonial.company}</p>
         </div>
       </header>
-      <h3 className="my-6 text-3xl">"{testimonial.title}"</h3>
-      <p>{testimonial.text}</p>
+      <h3 className="h-[72px] my-6 text-3xl">"{testimonial.title}"</h3>
+      <p className="self-stretch">{testimonial.text}</p>
       <Image
         className="w-auto h-6 mt-6 rounded-full object-cover"
         src={star}

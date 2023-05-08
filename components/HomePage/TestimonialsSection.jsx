@@ -17,7 +17,7 @@ const testimonials = [
     company: "Company Name",
     img: "/review-1.png",
     title: "I recommend this agency",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum",
+    text: "In the time that I have been using WeGrow services, the experience has been a breath of fresh air. WeGrow stands out from the rest!",
   },
   {
     id: 2345,
@@ -25,15 +25,15 @@ const testimonials = [
     company: "Company Name",
     img: "/review-2.png",
     title: "The support is awesome",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum",
+    text: "Passionate marketers and customer centric. Haven't seen much of the agencies who are passionate about customer service.",
   },
   {
     id: 3456,
     name: "James Brown",
     company: "Company Name",
     img: "/review-3.png",
-    title: "A game changer for us",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum",
+    title: "The best results",
+    text: "We have been working with WeGrow for over a year and have been really impressed with the results the team is delivering.",
   },
 ];
 
@@ -41,7 +41,7 @@ const MotionTestimonialSectionCard = motion(TestimonialSectionCard);
 
 const TestimonialsSection = () => {
   const paragraph =
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecatim nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum architecto asperiores totam fugiat quaerat explicabo rem magnam incidunt.";
+    "The review of our clients is the best way to show what WeGrow can do. We are not only building campaings and optimize websites. We deliver outstanding experince of digital world to our clients!";
 
   return (
     <section>

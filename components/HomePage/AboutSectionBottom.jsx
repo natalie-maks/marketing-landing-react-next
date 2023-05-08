@@ -7,23 +7,19 @@ import yellow2 from "@/assets/yellow-2.png";
 
 const metrics = [
   {
-    title: "1.2M+",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati",
+    title: "2000+",
+    text: "Successful digital projects and marketing services delivered",
     id: "metric-1",
   },
   {
-    title: "3.4B",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati",
+    title: "10+",
+    text: "Years of delivering digital experience, since 2011",
     id: "metric-2",
   },
+  { title: "25+", text: "Industry experts across various digital solutions", id: "metric-3" },
   {
-    title: "98%",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati",
-    id: "metric-3",
-  },
-  {
-    title: "10+",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati",
+    title: "30+",
+    text: "Industry awards across various indusries",
     id: "metric-4",
   },
 ];
@@ -43,7 +39,7 @@ const AboutSectionBottom = ({ delay }) => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ ease: "easeInOut", type: "tween", duration: 0.5, delay: delay }}
         viewport={{ once: true, margin: "-20%" }}
-        className="h-[300px] lg:h-auto max-h-[520px] w-full rounded-full rounded-tl-none object-cover"
+        className="h-[300px] lg:h-[500px] xl:h-[450px] w-full rounded-full rounded-tl-none object-cover"
         src={yellow2}
         alt="smiling man"
         width="640"

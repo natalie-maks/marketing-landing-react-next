@@ -8,7 +8,7 @@ import MotionDiv from "./homeAssets/MotionDiv";
 
 const AboutSectionTop = ({ delay }) => {
   const paragraph =
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis nisi veritatis eius consequuntur!";
+    "We will help you to find best platforms and build successful campaings for you business, connect with your customers and meet your digital goals";
 
   return (
     <div className="flex flex-col-reverse lg:flex-row items-center gap-12">

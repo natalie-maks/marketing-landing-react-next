@@ -8,7 +8,7 @@ import seo from "@/assets/seo.svg";
 const services = [
   {
     title: "Social Media Marketing",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis",
+    text: "Whether you want to launch your business on TikTok, run ads on Instagram or anything in between, we can help",
     id: "service-1",
     img: social,
     color: "blue",
@@ -16,7 +16,7 @@ const services = [
   },
   {
     title: "Email Marketing",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis",
+    text: "Defining your target audience and researching your competitors to ensure your strategy is always several steps ahead",
     id: "service-2",
     img: email,
     color: "orange",
@@ -24,7 +24,7 @@ const services = [
   },
   {
     title: "Paid Advertising",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis",
+    text: "We can help you get your business seen by your ideal audience using PPC marketing with Paid Search or Paid Social",
     id: "service-3",
     img: ads,
     color: "yellow",
@@ -32,7 +32,7 @@ const services = [
   },
   {
     title: "SEO Optimization",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihilodio perspiciatis",
+    text: "Boosting visibility, gaining trust and authority that keeps your website and your brand in top of search",
     id: "service-4",
     img: seo,
     color: "green",

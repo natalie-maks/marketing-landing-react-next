@@ -25,7 +25,7 @@ const BlogSection = ({ articles }) => {
   };
 
   const paragraph =
-    " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic ratione quis obcaecati nihil odio perspiciatis nisi veritatis eius consequuntur! Iusto nostrum architect asperiores totam fugiat quaerat explicabo rem magnam incidunt.";
+    "The most interestng and articles on latest strategies, insights & tools for digital marketers. Follow our marketing blog to stay up to date on digital trends!";
 
   return (
     <section id="blog" className="mt-12 pt-28">
