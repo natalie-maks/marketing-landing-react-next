@@ -42,12 +42,11 @@ const FooterCol3 = () => {
           id={"newsletter-email"}
           placeholder={"Your email address"}
         />
-        <motion.button
-          variants={item}
-          className="mb-4 py-3 px-6 rounded-full bg-blue text-white hover:translate-y-[-2px] shadow-md hover:shadow-darkblue"
-        >
-          Subscribe
-        </motion.button>
+        <motion.div variants={item} className="w-auto">
+          <button className="w-full mb-4 py-3 sm:px-10 xl:px-6 rounded-full bg-blue text-white hover:translate-y-[-2px] shadow-md hover:shadow-darkblue">
+            Subscribe
+          </button>
+        </motion.div>
       </form>
       {successMessage && <NewsletterDialog clearMessage={clearMessage} />}
     </motion.div>

@@ -12,27 +12,27 @@ const FooterCol2 = () => {
       </motion.h3>
       <ul className="grid grid-cols-2 gap-3 pt-6">
         <motion.li variants={item}>
-          <Link className="hover:text-white transition-all" href="/">
+          <Link className="hover:text-white transition-all" href="/" scroll={false}>
             Home
           </Link>
         </motion.li>
         <motion.li variants={item}>
-          <Link className="hover:text-white transition-all" href="/#about">
+          <Link className="hover:text-white transition-all" href="/#about" scroll={false}>
             About
           </Link>
         </motion.li>
         <motion.li variants={item}>
-          <Link className="hover:text-white transition-all" href="/#services">
+          <Link className="hover:text-white transition-all" href="/#services" scroll={false}>
             Services
           </Link>
         </motion.li>
         <motion.li variants={item}>
-          <Link className="hover:text-white transition-all" href="/articles">
+          <Link className="hover:text-white transition-all" href="/articles" scroll={false}>
             Blog
           </Link>
         </motion.li>
         <motion.li variants={item}>
-          <Link className="hover:text-white transition-all" href="/contact">
+          <Link className="hover:text-white transition-all" href="/contact" scroll={false}>
             Contacts
           </Link>
         </motion.li>
