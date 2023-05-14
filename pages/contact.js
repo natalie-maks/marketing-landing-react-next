@@ -46,7 +46,7 @@ const Contact = () => {
           <FormLabel title={"Name"} forBlock={"name"} />
           <FormInput type={"text"} id={"name"} placeholder={"John Doe"} />
           <FormLabel title={"Email"} forBlock={"email"} />
-          <FormInput type={"email"} id={"email"} placeholder={"johm@example.com"} />
+          <FormInput type={"email"} id={"email"} placeholder={"john@example.com"} />
           <FormLabel title={"Message"} forBlock={"message"} />
           <textarea
             className="w-full py-3 px-6 mr-3 bg-transparent border-[1px] border-lightgrey rounded-3xl"
